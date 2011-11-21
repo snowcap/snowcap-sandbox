@@ -3,3 +3,6 @@
 /app/config/parameters.ini
 .idea
 .DS_Store
+/app/cache/*
+/app/logs/*
+/vendor/
