@@ -2,3 +2,10 @@
 #_internal:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #   prefix:   /_internal
+
+snowcap_admin:
+  resource: "@SnowcapAdminBundle/Controller"
+  prefix: admin
+
+snowcap_admin_demo:
+  resource: "@SnowcapAdminDemoBundle/Controller"

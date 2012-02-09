@@ -4,7 +4,7 @@
 
 [twig]
     git=http://github.com/fabpot/Twig.git
-    version=v1.1.2
+    version=v1.3.0
 
 [monolog]
     git=http://github.com/Seldaek/monolog.git
@@ -59,3 +59,7 @@
     git=http://github.com/symfony/AsseticBundle.git
     target=/bundles/Symfony/Bundle/AsseticBundle
     version=v1.0.1
+
+[SnowcapAdminBundle]
+    git=http://github.com/snowcap/SnowcapAdminBundle.git
+    target=/bundles/Snowcap/AdminBundle

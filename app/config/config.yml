@@ -1,10 +1,11 @@
 imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
+    - { resource: '@SnowcapAdminBundle/Resources/config/config.yml' }
 
 framework:
     #esi:             ~
-    #translator:      { fallback: %locale% }
+    translator:      { fallback: en_US }
     secret:          %secret%
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
@@ -58,3 +59,15 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
+
+snowcap_admin:
+    sections:
+        posts:
+            label: Posts
+            admin_class: Snowcap\AdminDemoBundle\Admin\Post
+            entity_class: Snowcap\AdminDemoBundle\Entity\Post
+        tasks:
+            label: Tasks
+            admin_class: Snowcap\AdminDemoBundle\Admin\Task
+            entity_class: Snowcap\AdminDemoBundle\Entity\Task
+            grid_type: orderablecontent
