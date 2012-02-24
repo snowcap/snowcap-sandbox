@@ -1,0 +1,142 @@
+{% extends 'SnowcapAdminDemoBundle::base.html.twig' %}
+{% import 'SnowcapAdminDemoBundle:Default:sample.macros.html.twig' as element %}
+
+{% block body %}
+
+<h1>New page</h1>
+
+<style>
+</style>
+
+<form class="form-horizontal">
+    <fieldset class="well">
+
+        <legend>General information</legend>
+
+        {{ element.input("Main entity field1") }}
+        {{ element.select("Main entity field2") }}
+
+
+
+    </fieldset>
+    <fieldset class="well">
+        <legend>Translations</legend>
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a href="#page-fr" data-toggle="tab">Francais</a>
+          </li>
+          <li><a href="#page-en" data-toggle="tab">English</a></li>
+          <li><a href="#page-nl" data-toggle="tab">Nederlands</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="page-fr">
+                {{ element.input("Champ Francais 1")}}
+                {{ element.text("Champ Francais 2")}}
+            </div>
+            <div class="tab-pane" id="page-en">
+                {{ element.input("English field 1")}}
+                {{ element.text("English field 2")}}
+            </div>
+            <div class="tab-pane" id="page-nl">
+                {{ element.input("Nederlands 1")}}
+                {{ element.text("Nederlands 2")}}
+            </div>
+        </div>
+
+    </fieldset>
+    <fieldset class="well">
+        <legend>Thumbnail <small>one-to-one</small></legend>
+
+                {{ element.file("Path") }}
+
+                <ul class="nav nav-tabs">
+                  <li class="active">
+                    <a href="#page-fr" data-toggle="tab">Francais</a>
+                  </li>
+                  <li><a href="#page-en" data-toggle="tab">English</a></li>
+                  <li><a href="#page-nl" data-toggle="tab">Nederlands</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="page-fr">
+                        {{ element.input("Titre")}}
+                    </div>
+                    <div class="tab-pane" id="page-en">
+                        {{ element.input("Title")}}
+                    </div>
+                    <div class="tab-pane" id="page-nl">
+                        {{ element.input("Titel")}}
+                    </div>
+                </div>
+    </fieldset>
+    <fieldset class="well">
+        <legend>Images <small>one-to-many</small></legend>
+
+                {{ element.file("Path") }}
+
+                <ul class="nav nav-tabs">
+                  <li class="active">
+                    <a href="#page-fr" data-toggle="tab">Francais</a>
+                  </li>
+                  <li><a href="#page-en" data-toggle="tab">English</a></li>
+                  <li><a href="#page-nl" data-toggle="tab">Nederlands</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="page-fr">
+                        {{ element.input("Titre")}}
+                    </div>
+                    <div class="tab-pane" id="page-en">
+                        {{ element.input("Title")}}
+                    </div>
+                    <div class="tab-pane" id="page-nl">
+                        {{ element.input("Titel")}}
+                    </div>
+                </div>
+                <hr/>
+
+                {{ element.file("Path") }}
+
+                <ul class="nav nav-tabs nav-stacked">
+                  <li class="active">
+                    <a href="#page-fr" data-toggle="tab">Francais</a>
+                  </li>
+                  <li><a href="#page-en" data-toggle="tab">English</a></li>
+                  <li><a href="#page-nl" data-toggle="tab">Nederlands</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="page-fr">
+                        {{ element.input("Titre")}}
+                    </div>
+                    <div class="tab-pane" id="page-en">
+                        {{ element.input("Title")}}
+                    </div>
+                    <div class="tab-pane" id="page-nl">
+                        {{ element.input("Titel")}}
+                    </div>
+                </div>
+
+                <input type="button" class="btn btn-primary" value="+">
+    </fieldset>
+    <fieldset class="well">
+        <legend>Videos <small>another one-to-many</small></legend>
+
+                {{ element.input("Youtube ID") }}
+
+                {{ element.input("Youtube ID") }}
+
+                <input type="button" class="btn btn-primary" value="+">
+    </fieldset>
+
+
+
+
+
+    <div class="form-actions">
+        <button type="submit" class="btn btn-large btn-primary">content.save</button>
+    </div>
+</form>
+
+{% endblock %}

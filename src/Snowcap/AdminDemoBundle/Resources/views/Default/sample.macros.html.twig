@@ -1,0 +1,38 @@
+{% macro input(label) %}
+    <div class="control-group">
+        <label class="control-label">{{ label }}</label>
+        <div class="controls">
+            <input type="text">
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro text(label) %}
+    <div class="control-group">
+        <label class="control-label">{{ label }}</label>
+        <div class="controls">
+            <textarea rows="15" class="span10"></textarea>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro select(label) %}
+    <div class="control-group">
+        <label class="control-label">{{ label }}</label>
+        <div class="controls">
+            <select>
+                <option></option>
+                <option>Some value</option>
+            </select>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro file(label) %}
+    <div class="control-group">
+        <label class="control-label">{{ label }}</label>
+        <div class="controls">
+            <input type="file" />
+        </div>
+    </div>
+{% endmacro %}
