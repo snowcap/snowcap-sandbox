@@ -1,4 +1,6 @@
-Snowcap admin demo
+Snowcap Sandbox
 ========================
 
-This projet is still a WIP. Don't even think about using it for something serious for the moment.
+Snowcap's sandbox corner
+
+Don't even think about using it for something serious :)
