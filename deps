@@ -60,6 +60,14 @@
     target=/bundles/Symfony/Bundle/AsseticBundle
     version=v1.0.1
 
+[SnowcapCoreBundle]
+    git=http://github.com/snowcap/SnowcapCoreBundle.git
+    target=/bundles/Snowcap/CoreBundle
+
+[SnowcapBootstrapBundle]
+    git=http://github.com/snowcap/SnowcapBootstrapBundle.git
+    target=/bundles/Snowcap/BootsrapBundle
+
 [SnowcapAdminBundle]
     git=http://github.com/snowcap/SnowcapAdminBundle.git
     target=/bundles/Snowcap/AdminBundle
