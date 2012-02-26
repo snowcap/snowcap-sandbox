@@ -4,7 +4,7 @@
 #   prefix:   /_internal
 
 snowcap_admin:
-  resource: "@SnowcapAdminBundle/Controller"
+  resource: "@SnowcapAdminBundle/Resources/config/routing.yml"
   prefix: admin
 
 snowcap_admin_demo:

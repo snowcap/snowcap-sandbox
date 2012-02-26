@@ -5,7 +5,7 @@ imports:
 
 framework:
     #esi:             ~
-    translator:      { fallback: en_US }
+    translator:      { fallback: en }
     secret:          %secret%
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
@@ -62,12 +62,11 @@ jms_security_extra:
 
 snowcap_admin:
     sections:
-        posts:
-            label: Posts
-            admin_class: Snowcap\AdminDemoBundle\Admin\Post
-            entity_class: Snowcap\AdminDemoBundle\Entity\Post
         tasks:
             label: Tasks
-            admin_class: Snowcap\AdminDemoBundle\Admin\Task
+            admin_class: Snowcap\AdminDemoBundle\Admin\TaskAdmin
             entity_class: Snowcap\AdminDemoBundle\Entity\Task
-            grid_type: orderablecontent
+        posts:
+            label: Posts
+            admin_class: Snowcap\AdminDemoBundle\Admin\PostAdmin
+            entity_class: Snowcap\AdminDemoBundle\Entity\Post

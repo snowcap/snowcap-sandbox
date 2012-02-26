@@ -31,16 +31,9 @@ class Task
     /**
      * @var string $description
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="description", type="text")
      */
     private $description;
-
-    /**
-     * @var integer $position
-     *
-     * @ORM\Column(name="position", type="integer")
-     */
-    private $position;
 
 
     /**
@@ -91,25 +84,5 @@ class Task
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Set position
-     *
-     * @param integer $position
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-    }
-
-    /**
-     * Get position
-     *
-     * @return integer 
-     */
-    public function getPosition()
-    {
-        return $this->position;
     }
 }

@@ -38,7 +38,7 @@ class Post
     /**
      * @var string $body
      *
-     * @ORM\Column(name="body", type="string", length=255)
+     * @ORM\Column(name="body", type="text")
      */
     private $body;
 
