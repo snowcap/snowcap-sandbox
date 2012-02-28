@@ -66,6 +66,10 @@ snowcap_admin:
             label: Tasks
             admin_class: Snowcap\AdminDemoBundle\Admin\TaskAdmin
             entity_class: Snowcap\AdminDemoBundle\Entity\Task
+        image:
+            label: Image
+            admin_class: Snowcap\AdminDemoBundle\Admin\ImageAdmin
+            entity_class: Snowcap\AdminDemoBundle\Entity\Image
         posts:
             label: Posts
             admin_class: Snowcap\AdminDemoBundle\Admin\PostAdmin

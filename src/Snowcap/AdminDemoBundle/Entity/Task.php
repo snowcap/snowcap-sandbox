@@ -35,6 +35,14 @@ class Task
      */
     private $description;
 
+    /**
+     * @var Image
+     *
+     * @ORM\ManyToOne(targetEntity="Image", cascade={"persist"})
+     * @ORM\JoinColumn(name="image_id")
+     */
+    private $image;
+
 
     /**
      * Get id
@@ -84,5 +92,21 @@ class Task
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * @param \Snowcap\AdminDemoBundle\Entity\Image $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return \Snowcap\AdminDemoBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

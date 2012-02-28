@@ -6,7 +6,7 @@ use Symfony\Component\Form\FormBuilder;
 use Snowcap\AdminBundle\Admin\ContentAdmin;
 use Snowcap\AdminBundle\Grid\ContentGrid;
 
-class TaskAdmin extends ContentAdmin
+class ImageAdmin extends ContentAdmin
 {
     /**
      * Configure the main listing grid
@@ -15,16 +15,14 @@ class TaskAdmin extends ContentAdmin
      */
     protected function configureContentGrid(ContentGrid $grid)
     {
-        $grid->addColumn('name');
+        $grid->addColumn('title');
     }
 
     protected function buildForm(FormBuilder $builder)
     {
-        $addImageUrl = $this->environment->get('router')->generate('snowcap_admin_content_create', array('code' => 'image'));
         $builder
-            ->add('name')
-            ->add('description')
-            ->add('image', 'inline', array('create_url' => $addImageUrl));
+            ->add('title')
+            ->add('path');
         return $builder;
     }
 
