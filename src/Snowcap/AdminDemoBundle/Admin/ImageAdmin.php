@@ -22,7 +22,7 @@ class ImageAdmin extends ContentAdmin
     {
         $builder
             ->add('title')
-            ->add('path');
+            ->add('file', 'snowcap_core_image', array('web_path' => 'webPath'));
         return $builder;
     }
 

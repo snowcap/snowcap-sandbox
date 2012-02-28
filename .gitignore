@@ -6,3 +6,12 @@
 /app/cache/*
 /app/logs/*
 /vendor/
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        ignorecase = true
+[remote "origin"]
+        fetch = +refs/heads/*:refs/remotes/origin/*
+        url = git@github.com:snowcap/snowcap-website.git
