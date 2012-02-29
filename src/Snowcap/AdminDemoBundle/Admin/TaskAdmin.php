@@ -20,11 +20,16 @@ class TaskAdmin extends ContentAdmin
 
     protected function buildForm(FormBuilder $builder)
     {
-        $addImageUrl = $this->environment->get('router')->generate('snowcap_admin_inline_create', array('code' => 'image'));
         $builder
             ->add('name')
             ->add('description')
-            ->add('image', 'inline', array('create_url' => $addImageUrl, 'class' => 'Snowcap\AdminDemoBundle\Entity\Image', 'property' => 'title'));
+            ->add('image', 'inline', array(
+                    'class' => 'Snowcap\AdminDemoBundle\Entity\Image',
+                    'property' => 'title',
+                    'route' => 'snowcap_admin_inline_create',
+                    'params' => array('property' => 'title', 'code' => 'image')
+                )
+            );
         return $builder;
     }
 
