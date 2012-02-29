@@ -41,7 +41,6 @@ class Image
     /**
      *
      * @Assert\File(maxSize="6000000")
-     * @Assert\NotBlank()
      */
     public $file;
 
