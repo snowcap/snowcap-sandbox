@@ -5,6 +5,8 @@ namespace Snowcap\AdminDemoBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
 
+use \Snowcap\AdminDemoBundle\Entity\ImageTranslation;
+
 class ImageType extends AbstractType
 {
     public function getName()
@@ -18,7 +20,9 @@ class ImageType extends AbstractType
             ->add('title')
             ->add('file', 'snowcap_core_image', array('web_path' => 'webPath'))
             ->add('translations', 'collection', array(
-            'type' => new ImageTranslationType(),
+                'type' => new ImageTranslationType(),
+                'by_reference' => false,
+                'allow_add' => true
         ));
     }
 

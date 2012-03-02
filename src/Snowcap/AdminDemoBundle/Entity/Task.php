@@ -49,7 +49,7 @@ class Task
     /**
      * @var
      *
-     * @ORM\ManyToMany(targetEntity="Image")
+     * @ORM\ManyToMany(targetEntity="Image", cascade={"persist"})
      */
     private $visuals;
 
@@ -57,7 +57,7 @@ class Task
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -77,7 +77,7 @@ class Task
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -97,7 +97,7 @@ class Task
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {

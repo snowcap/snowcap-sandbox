@@ -37,6 +37,8 @@ class TaskAdmin extends ContentAdmin
                 'type' => new ImageType(),
                 'allow_add' => true,
                 'prototype' => true,
+                'initial_data' => $this->environment->getAdmin('image')->getBlankEntity(),
+                //'by_reference' => false
 
         ));
         return $builder;

@@ -7,6 +7,7 @@ use Snowcap\AdminBundle\Admin\ContentAdmin;
 use Snowcap\AdminBundle\Grid\ContentGrid;
 use Snowcap\AdminDemoBundle\Entity\ImageTranslation;
 use Snowcap\AdminDemoBundle\Form\ImageTranslationType;
+use Snowcap\AdminDemoBundle\Form\ImageType;
 
 class ImageAdmin extends ContentAdmin
 {
@@ -31,6 +32,12 @@ class ImageAdmin extends ContentAdmin
         return $builder;
     }
 
+    public function getForm($data){
+        $builder = $this->environment->get('form.factory')->createBuilder(new ImageType(), $data, array('data_class' => $this->getParam('entity_class')));
+        //$this->buildForm($builder);
+        return $builder->getForm();
+    }
+
     public function buildPreview($preview)
     {
         $preview
@@ -41,8 +48,12 @@ class ImageAdmin extends ContentAdmin
     public function getBlankEntity()
     {
         $entity = parent::getBlankEntity();
-        $entity->getTranslations()
-            ->add(new ImageTranslation('fr', 'ta mere'));
+        $entity->setTranslations(array(
+            new ImageTranslation('fr'),
+            new ImageTranslation('en'),
+            new ImageTranslation('nl'),
+            new ImageTranslation('de'),
+        ));
         return $entity;
     }
 
