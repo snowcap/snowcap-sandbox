@@ -5,6 +5,7 @@ use Symfony\Component\Form\FormBuilder;
 
 use Snowcap\AdminBundle\Admin\ContentAdmin;
 use Snowcap\AdminBundle\Grid\ContentGrid;
+use Snowcap\AdminDemoBundle\Form\ImageType;
 
 class TaskAdmin extends ContentAdmin
 {
@@ -23,13 +24,21 @@ class TaskAdmin extends ContentAdmin
         $builder
             ->add('name')
             ->add('description')
-            ->add('image', 'inline', array(
+            ->add('image', 'snowcap_admin_inline', array(
                     'class' => 'Snowcap\AdminDemoBundle\Entity\Image',
                     'property' => 'title',
-                    'route' => 'snowcap_admin_inline_create',
-                    'params' => array('property' => 'title', 'code' => 'image')
+                    'inline_admin' => $this->environment->getAdmin('inline_image'),
+                    'preview' => array(
+                        'type' => 'image',
+                    )
                 )
-            );
+            )
+            ->add('visuals', 'collection', array(
+                'type' => new ImageType(),
+                'allow_add' => true,
+                'prototype' => true,
+
+        ));
         return $builder;
     }
 

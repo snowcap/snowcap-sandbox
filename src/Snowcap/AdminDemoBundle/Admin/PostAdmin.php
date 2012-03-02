@@ -21,14 +21,10 @@ class PostAdmin extends ContentAdmin
     protected function buildForm(FormBuilder $builder)
     {
         $builder
-            ->add($builder->create('general', 'fieldset', array('legend' => 'general information'))
-                ->add('title')
-                ->add('slug')
-            )
-            ->add($builder->create('other', 'fieldset', array('legend' => 'other info'))
-                ->add('body')
-                ->add('published_on')
-        );
+            ->add('title')
+            ->add('slug')
+            ->add('body')
+            ->add('published_on');
         return $builder;
     }
 }

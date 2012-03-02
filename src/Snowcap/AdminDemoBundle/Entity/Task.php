@@ -3,6 +3,7 @@
 namespace Snowcap\AdminDemoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Snowcap\AdminDemoBundle\Entity\Task
@@ -25,6 +26,7 @@ class Task
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -32,6 +34,7 @@ class Task
      * @var string $description
      *
      * @ORM\Column(name="description", type="text")
+     * @Assert\NotBlank()
      */
     private $description;
 
@@ -42,6 +45,13 @@ class Task
      * @ORM\JoinColumn(name="image_id")
      */
     private $image;
+
+    /**
+     * @var
+     *
+     * @ORM\ManyToMany(targetEntity="Image")
+     */
+    private $visuals;
 
 
     /**
@@ -108,5 +118,21 @@ class Task
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * @param  $visuals
+     */
+    public function setVisuals($visuals)
+    {
+        $this->visuals = $visuals;
+    }
+
+    /**
+     * @return
+     */
+    public function getVisuals()
+    {
+        return $this->visuals;
     }
 }

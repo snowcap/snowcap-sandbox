@@ -4,7 +4,7 @@ namespace Snowcap\AdminDemoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Snowcap\AdminDemoBundle\Entity\Image
  *
@@ -39,10 +39,19 @@ class Image
     private $path;
 
     /**
+     * @ORM\OneToMany(targetEntity="ImageTranslation", mappedBy="image", indexBy="locale")
+     */
+    private $translations;
+
+    /**
      *
      * @Assert\File(maxSize="6000000")
      */
     public $file;
+
+    public function __construct(){
+        $this->translations = new ArrayCollection();
+    }
 
 
     /**
@@ -155,5 +164,15 @@ class Image
     {
         // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
         return 'uploads/documents';
+    }
+
+    public function setTranslations($translations)
+    {
+        $this->translations = $translations;
+    }
+
+    public function getTranslations()
+    {
+        return $this->translations;
     }
 }
