@@ -4,6 +4,7 @@ namespace Snowcap\AdminDemoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Snowcap\AdminDemoBundle\Entity\Task
@@ -53,7 +54,15 @@ class Task
      */
     private $visuals;
 
+    /**
+     * @ORM\OneToMany(targetEntity="TaskTranslation", mappedBy="image", indexBy="locale", cascade = {"all"})
+     */
+    private $translations;
 
+    public function __construct()
+    {
+        $this->translations = new ArrayCollection();
+    }
     /**
      * Get id
      *
@@ -135,4 +144,18 @@ class Task
     {
         return $this->visuals;
     }
+
+    public function setTranslations($translations)
+    {
+        foreach($translations as $translation) {
+            $translation->setImage($this);
+            $this->translations->add($translation);
+        }
+    }
+
+    public function getTranslations()
+    {
+        return $this->translations;
+    }
+
 }

@@ -5,21 +5,22 @@ namespace Snowcap\AdminDemoBundle\Form;
     use Symfony\Component\Form\AbstractType;
     use Symfony\Component\Form\FormBuilder;
 
-class ImageTranslationType extends AbstractType {
+class TaskTranslationType extends AbstractType {
     public function getName(){
-        return 'image_translation';
+        return 'task_translation';
     }
 
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder
-            ->add('title')
+            ->add('name')
+            ->add('description', 'markdown')
             ->add('locale', 'hidden');
     }
 
     public function getDefaultOptions(array $options)
     {
-        return array('data_class' => 'Snowcap\AdminDemoBundle\Entity\ImageTranslation');
+        return array('data_class' => 'Snowcap\AdminDemoBundle\Entity\TaskTranslation');
     }
 
 
