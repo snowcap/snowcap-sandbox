@@ -28,6 +28,8 @@ class ImageAdmin extends ContentAdmin
             ->add('file', 'snowcap_core_image', array('web_path' => 'webPath'))
             ->add('translations', 'collection', array(
                 'type' => new ImageTranslationType(),
+                'tabbable' => true,
+                'property' => 'locale',
             ));
         return $builder;
     }

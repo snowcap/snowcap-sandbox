@@ -24,8 +24,6 @@ class TaskAdmin extends ContentAdmin
     protected function buildForm(FormBuilder $builder)
     {
         $builder
-            ->add('name')
-            ->add('description')
             ->add('translations', 'collection', array(
                 'type' => new TaskTranslationType(),
                 'tabbable' => true,
@@ -54,10 +52,6 @@ class TaskAdmin extends ContentAdmin
     public function getFieldsets()
     {
         return array(
-            array(
-                'legend' => 'General',
-                'rows' => array('name','description'),
-             ),
             array(
                 'legend' => 'Translations',
                 'rows' => array('translations'),
