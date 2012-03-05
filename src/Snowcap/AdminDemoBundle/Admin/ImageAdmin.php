@@ -21,19 +21,6 @@ class ImageAdmin extends ContentAdmin
         $grid->addColumn('title');
     }
 
-    protected function buildForm(FormBuilder $builder)
-    {
-        $builder
-            ->add('title')
-            ->add('file', 'snowcap_core_image', array('web_path' => 'webPath'))
-            ->add('translations', 'collection', array(
-                'type' => new ImageTranslationType(),
-                'tabbable' => true,
-                'property' => 'locale',
-            ));
-        return $builder;
-    }
-
     public function getForm($data){
         $builder = $this->environment->get('form.factory')->createBuilder(new ImageType(), $data, array('data_class' => $this->getParam('entity_class')));
         //$this->buildForm($builder);

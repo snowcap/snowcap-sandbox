@@ -28,6 +28,7 @@ class TaskAdmin extends ContentAdmin
                 'type' => new TaskTranslationType(),
                 'tabbable' => true,
                 'property' => 'locale',
+                'html_id' => 'task'
             ))
             ->add('image', 'snowcap_admin_inline', array(
                     'class' => 'Snowcap\AdminDemoBundle\Entity\Image',
