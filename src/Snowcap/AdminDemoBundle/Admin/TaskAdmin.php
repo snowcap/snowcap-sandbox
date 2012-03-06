@@ -18,7 +18,7 @@ class TaskAdmin extends ContentAdmin
      */
     protected function configureContentGrid(ContentGrid $grid)
     {
-        $grid->addColumn('name');
+        $grid->addColumn('id');
     }
 
     protected function buildForm(FormBuilder $builder)
@@ -32,11 +32,7 @@ class TaskAdmin extends ContentAdmin
             ))
             ->add('image', 'snowcap_admin_inline', array(
                     'class' => 'Snowcap\AdminDemoBundle\Entity\Image',
-                    'property' => 'title',
-                    'inline_admin' => $this->environment->getAdmin('inline_image'),
-                    'preview' => array(
-                        'type' => 'image',
-                    )
+                    'inline_admin' => $this->environment->getAdmin('image'),
                 )
             )
             ->add('visuals', 'collection', array(
@@ -79,6 +75,4 @@ class TaskAdmin extends ContentAdmin
         ));
         return $entity;
     }
-
-
 }

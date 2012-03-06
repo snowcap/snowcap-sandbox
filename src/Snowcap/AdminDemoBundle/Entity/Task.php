@@ -39,7 +39,7 @@ class Task
     private $visuals;
 
     /**
-     * @ORM\OneToMany(targetEntity="TaskTranslation", mappedBy="image", indexBy="locale", cascade = {"all"})
+     * @ORM\OneToMany(targetEntity="TaskTranslation", mappedBy="task", indexBy="locale", cascade = {"all"})
      */
     private $translations;
 

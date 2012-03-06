@@ -70,10 +70,6 @@ snowcap_admin:
             label: Image
             admin_class: Snowcap\AdminDemoBundle\Admin\ImageAdmin
             entity_class: Snowcap\AdminDemoBundle\Entity\Image
-        inline_image:
-            label: Image
-            admin_class: Snowcap\AdminDemoBundle\Admin\ImageAdmin
-            entity_class: Snowcap\AdminDemoBundle\Entity\Image
         posts:
             label: Posts
             admin_class: Snowcap\AdminDemoBundle\Admin\PostAdmin

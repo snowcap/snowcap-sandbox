@@ -46,5 +46,9 @@ class ImageAdmin extends ContentAdmin
         return $entity;
     }
 
+    public function getPreviewBlockName()
+    {
+        return 'image_preview';
+    }
 
 }
