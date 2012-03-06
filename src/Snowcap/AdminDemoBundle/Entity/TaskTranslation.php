@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Snowcap\AdminDemoBundle\Entity\TaskTranslation
  *
- * @ORM\Table()
+ * @ORM\Table(name="task_translation")
  * @ORM\Entity
  */
 class TaskTranslation
@@ -42,6 +42,13 @@ class TaskTranslation
      * @ORM\Column(name="description", type="text")
      */
     private $description;
+
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="Task", inversedBy="translations")
+     */
+    private $task;
 
     public function __construct($locale = null){
         $this->locale = $locale;
@@ -126,5 +133,21 @@ class TaskTranslation
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * @param  $task
+     */
+    public function setTask($task)
+    {
+        $this->task = $task;
+    }
+
+    /**
+     * @return
+     */
+    public function getTask()
+    {
+        return $this->task;
     }
 }

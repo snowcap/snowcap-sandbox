@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Snowcap\AdminDemoBundle\Entity\ImageTranslation
  *
- * @ORM\Table()
+ * @ORM\Table(name="image_translation")
  * @ORM\Entity
  */
 class ImageTranslation
@@ -31,7 +31,7 @@ class ImageTranslation
     /**
      * @var string $title
      *
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255, nullable=true)
      */
     private $title;
 
