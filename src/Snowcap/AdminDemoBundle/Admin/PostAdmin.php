@@ -15,7 +15,8 @@ class PostAdmin extends ContentAdmin
      */
     protected function configureContentGrid(ContentGrid $grid)
     {
-        // TODO: Implement configureContentGrid() method.
+        $grid->addColumn('title');
+        $grid->addColumn('slug');
     }
 
     protected function buildForm(FormBuilder $builder)
