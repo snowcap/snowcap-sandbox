@@ -22,7 +22,7 @@ class PostAdmin extends ContentAdmin
     {
         $builder
             ->add('title')
-            ->add('slug')
+            ->add('slug', 'slug', array('target' => 'title'))
             ->add('body', 'markdown')
             ->add('published_on');
         return $builder;
