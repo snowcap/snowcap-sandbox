@@ -5,12 +5,12 @@ namespace Snowcap\AdminDemoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Snowcap\AdminDemoBundle\Entity\ImageTranslation
+ * Snowcap\AdminDemoBundle\Entity\TaskTranslation
  *
- * @ORM\Table(name="image_translation")
+ * @ORM\Table(name="task_translation")
  * @ORM\Entity
  */
-class ImageTranslation
+class TaskTranslation
 {
     /**
      * @var integer $id
@@ -31,17 +31,24 @@ class ImageTranslation
     /**
      * @var string $title
      *
-     * @ORM\Column(name="title", type="string", length=255, nullable=true)
+     * @ORM\Column(name="title", type="string", length=255)
      */
-    private $title;
+    private $name;
+
+
+    /**
+     * @var string $description
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
 
     /**
      * @var
      *
-     * @ORM\ManyToOne(targetEntity="Image", inversedBy="translations")
-     * @ORM\JoinColumn(name="image_id")
+     * @ORM\ManyToOne(targetEntity="Task", inversedBy="translations")
      */
-    private $image;
+    private $task;
 
     public function __construct($locale = null){
         $this->locale = $locale;
@@ -81,9 +88,9 @@ class ImageTranslation
      *
      * @param string $title
      */
-    public function setTitle($title)
+    public function setName($title)
     {
-        $this->title = $title;
+        $this->name = $title;
     }
 
     /**
@@ -91,9 +98,9 @@ class ImageTranslation
      *
      * @return string 
      */
-    public function getTitle()
+    public function getName()
     {
-        return $this->title;
+        return $this->name;
     }
 
     /**
@@ -110,5 +117,37 @@ class ImageTranslation
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param  $task
+     */
+    public function setTask($task)
+    {
+        $this->task = $task;
+    }
+
+    /**
+     * @return
+     */
+    public function getTask()
+    {
+        return $this->task;
     }
 }

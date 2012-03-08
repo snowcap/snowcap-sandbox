@@ -22,7 +22,10 @@ class ImageType extends AbstractType
             ->add('translations', 'collection', array(
                 'type' => new ImageTranslationType(),
                 'by_reference' => false,
-                'allow_add' => true
+                'allow_add' => true,
+                'tabbable' => true,
+                'property' => 'locale',
+                'html_id' => 'image'
         ));
     }
 

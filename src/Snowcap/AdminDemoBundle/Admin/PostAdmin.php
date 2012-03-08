@@ -26,9 +26,17 @@ class PostAdmin extends ContentAdmin
     {
         $builder
             ->add('title')
-            ->add('slug')
+            ->add('slug', 'slug', array('target' => 'title'))
             ->add('body', 'markdown')
-            ->add('published_on');
+            ->add('published_on', 'datetime', array(
+                'date_widget' => 'single_text',
+                'time_widget' => 'single_text',
+                'date_format' => 'dd/MM/yyyy',
+                'input' => 'datetime',
+                'attr' => array(
+                    'placeholder' => 'dd/mm/yyyy hh:mm'
+                )
+        ));
         return $builder;
     }
 }

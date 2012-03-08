@@ -4,6 +4,7 @@ namespace Snowcap\AdminDemoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Snowcap\AdminDemoBundle\Entity\Task
@@ -23,22 +24,6 @@ class Task
     private $id;
 
     /**
-     * @var string $name
-     *
-     * @ORM\Column(name="name", type="string", length=255)
-     * @Assert\NotBlank()
-     */
-    private $name;
-
-    /**
-     * @var string $description
-     *
-     * @ORM\Column(name="description", type="text")
-     * @Assert\NotBlank()
-     */
-    private $description;
-
-    /**
      * @var Image
      *
      * @ORM\ManyToOne(targetEntity="Image", cascade={"persist"})
@@ -53,7 +38,15 @@ class Task
      */
     private $visuals;
 
+    /**
+     * @ORM\OneToMany(targetEntity="TaskTranslation", mappedBy="task", indexBy="locale", cascade = {"all"})
+     */
+    private $translations;
 
+    public function __construct()
+    {
+        $this->translations = new ArrayCollection();
+    }
     /**
      * Get id
      *
@@ -62,46 +55,6 @@ class Task
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
     }
 
     /**
@@ -135,4 +88,18 @@ class Task
     {
         return $this->visuals;
     }
+
+    public function setTranslations($translations)
+    {
+        foreach($translations as $translation) {
+            $translation->setImage($this);
+            $this->translations->add($translation);
+        }
+    }
+
+    public function getTranslations()
+    {
+        return $this->translations;
+    }
+
 }
