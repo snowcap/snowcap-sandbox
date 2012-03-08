@@ -5,6 +5,7 @@ use Symfony\Component\Form\FormBuilder;
 
 use Snowcap\AdminBundle\Admin\ContentAdmin;
 use Snowcap\AdminBundle\Grid\ContentGrid;
+use Snowcap\AdminBundle\Datalist\ContentDatalist;
 
 class PostAdmin extends ContentAdmin
 {
@@ -13,9 +14,12 @@ class PostAdmin extends ContentAdmin
      *
      * @param \Snowcap\AdminBundle\Grid\ContentGrid $grid
      */
-    protected function configureContentGrid(ContentGrid $grid)
+    public function getList()
     {
-        // TODO: Implement configureContentGrid() method.
+        $datalist = $this->createDatalist('post', 'grid');
+        $datalist
+            ->add('title', 'text');
+        return $datalist;
     }
 
     protected function buildForm(FormBuilder $builder)
