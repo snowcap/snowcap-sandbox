@@ -20,7 +20,7 @@ class TaskAdmin extends ContentAdmin
     {
         $datalist = $this->createDatalist('post', 'grid');
         $datalist
-            ->add('name', 'text');
+            ->add('id', 'text');
         return $datalist;
     }
 
@@ -36,7 +36,7 @@ class TaskAdmin extends ContentAdmin
             ->add('image', 'snowcap_admin_inline', array(
                     'class' => 'Snowcap\AdminDemoBundle\Entity\Image',
                     'property' => 'title',
-                    'inline_admin' => $this->environment->getAdmin('inline_image'),
+                    'inline_admin' => $this->environment->getAdmin('image'),
                     'preview' => array(
                         'type' => 'image',
                     )
