@@ -15,7 +15,8 @@ $loader->registerNamespaces(array(
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
     'Knp'              => __DIR__.'/../vendor/bundles',
-    'Snowcap'          => __DIR__.'/../vendor/bundles'
+    'Snowcap'          => __DIR__.'/../vendor/bundles',
+    'DoctrineExtensions' => __DIR__.'/../vendor/DoctrineExtensions/lib',
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
