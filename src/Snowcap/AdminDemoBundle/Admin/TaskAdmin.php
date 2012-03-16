@@ -34,22 +34,22 @@ class TaskAdmin extends ContentAdmin
                 'html_id' => 'task',
             ))
             ->add('image', 'snowcap_admin_inline', array(
-                    'class' => 'Snowcap\AdminDemoBundle\Entity\Image',
-                    'property' => 'title',
-                    'inline_admin' => $this->environment->getAdmin('image'),
-                    'preview' => array(
-                        'type' => 'image',
-                    )
+                'class' => 'Snowcap\AdminDemoBundle\Entity\Image',
+                'property' => 'title',
+                'inline_admin' => $this->environment->getAdmin('image'),
+                'preview' => array(
+                    'type' => 'image',
                 )
-            )
-            ->add('visuals', 'collection', array(
-                'type' => new ImageType(),
-                'allow_add' => true,
-                'prototype' => true,
-                'initial_data' => $this->environment->getAdmin('image')->getBlankEntity(),
-                //'by_reference' => false
-
-        ));
+            ))
+            ->add('visuals', 'snowcap_admin_inline', array(
+                'class' => 'Snowcap\AdminDemoBundle\Entity\Image',
+                'multiple' => true,
+                'property' => 'title',
+                'inline_admin' => $this->environment->getAdmin('image'),
+                'preview' => array(
+                    'type' => 'image',
+                )
+            ));
         return $builder;
     }
 

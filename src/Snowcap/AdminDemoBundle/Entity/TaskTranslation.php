@@ -3,6 +3,7 @@
 namespace Snowcap\AdminDemoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Snowcap\AdminDemoBundle\Entity\TaskTranslation
@@ -32,6 +33,7 @@ class TaskTranslation
      * @var string $title
      *
      * @ORM\Column(name="title", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -40,6 +42,7 @@ class TaskTranslation
      * @var string $description
      *
      * @ORM\Column(name="description", type="text")
+     * @Assert\NotBlank()
      */
     private $description;
 
