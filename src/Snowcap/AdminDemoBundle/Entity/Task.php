@@ -92,7 +92,7 @@ class Task
     public function setTranslations($translations)
     {
         foreach($translations as $translation) {
-            $translation->setImage($this);
+            $translation->setTask($this);
             $this->translations->add($translation);
         }
     }

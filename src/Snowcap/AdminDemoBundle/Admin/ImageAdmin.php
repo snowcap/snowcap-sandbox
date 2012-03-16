@@ -52,4 +52,19 @@ class ImageAdmin extends ContentAdmin
         return 'image_preview';
     }
 
+    public function filterAutocomplete($input) {
+        $queryBuilder = $this->getQueryBuilder();
+        $queryBuilder->add('where', $queryBuilder->expr()->like('e.title', $queryBuilder->expr()->literal('%' . $input . '%')));
+        return $queryBuilder->getQuery()->getResult();
+    }
+
+    public function getPreview($entity) {
+        return array(
+            'identity' => $entity->getId(),
+            'title' => $entity->getTitle(),
+            'description' => 'ta mère en slip',
+            'image' => $entity->getWebPath()
+        );
+    }
+
 }
