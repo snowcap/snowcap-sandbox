@@ -18,8 +18,16 @@ class PostAdmin extends ContentAdmin
     {
         $datalist = $this->createDatalist('post', 'grid');
         $datalist
-            ->add('title', 'text');
+            ->add('title', 'text')
+            ->paginate(1);
         return $datalist;
+    }
+
+    public function getSearchForm()
+    {
+        $builder = $this->environment->get('form.factory')->createBuilder('search')
+            ->add('e.title', 'text');
+        return $builder->getForm();
     }
 
     protected function buildForm(FormBuilder $builder)
@@ -29,13 +37,13 @@ class PostAdmin extends ContentAdmin
             ->add('slug', 'slug', array('target' => 'title'))
             ->add('body', 'markdown')
             ->add('published_on', 'datetime', array(
-                'date_widget' => 'single_text',
-                'time_widget' => 'single_text',
-                'date_format' => 'dd/MM/yyyy',
-                'input' => 'datetime',
-                'attr' => array(
-                    'placeholder' => 'dd/mm/yyyy hh:mm'
-                )
+            'date_widget' => 'single_text',
+            'time_widget' => 'single_text',
+            'date_format' => 'dd/MM/yyyy',
+            'input' => 'datetime',
+            'attr' => array(
+                'placeholder' => 'dd/mm/yyyy hh:mm'
+            )
         ));
         return $builder;
     }
