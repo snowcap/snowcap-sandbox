@@ -2,11 +2,13 @@
 
 namespace Snowcap\AdminDemoBundle\Form;
 
-    use Symfony\Component\Form\AbstractType;
-    use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilder;
 
-class TaskTranslationType extends AbstractType {
-    public function getName(){
+class TaskTranslationType extends AbstractType
+{
+    public function getName()
+    {
         return 'task_translation';
     }
 

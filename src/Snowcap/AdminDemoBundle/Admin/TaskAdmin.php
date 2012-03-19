@@ -4,9 +4,9 @@ namespace Snowcap\AdminDemoBundle\Admin;
 use Symfony\Component\Form\FormBuilder;
 
 use Snowcap\AdminBundle\Admin\ContentAdmin;
-use Snowcap\AdminBundle\Grid\ContentGrid;
-use Snowcap\AdminDemoBundle\Form\ImageType;
+use Snowcap\AdminDemoBundle\Form\TaskType;
 use Snowcap\AdminDemoBundle\Form\TaskTranslationType;
+use Snowcap\AdminDemoBundle\Form\ImageType;
 use Snowcap\AdminDemoBundle\Entity\TaskTranslation;
 
 class TaskAdmin extends ContentAdmin
@@ -16,41 +16,18 @@ class TaskAdmin extends ContentAdmin
      *
      * @param \Snowcap\AdminBundle\Grid\ContentGrid $grid
      */
-    public function getList()
+    public function getDatalist()
     {
-        $datalist = $this->createDatalist('post', 'grid');
+        $datalist = $this->createDatalist('grid', 'task');
         $datalist
             ->add('id', 'text');
         return $datalist;
     }
 
-    protected function buildForm(FormBuilder $builder)
+    public function getForm($data = null)
     {
-        $builder
-            ->add('translations', 'collection', array(
-                'type' => new TaskTranslationType(),
-                'tabbable' => true,
-                'property' => 'locale',
-                'html_id' => 'task',
-            ))
-            ->add('image', 'snowcap_admin_inline', array(
-                'class' => 'Snowcap\AdminDemoBundle\Entity\Image',
-                'property' => 'title',
-                'inline_admin' => $this->environment->getAdmin('image'),
-                'preview' => array(
-                    'type' => 'image',
-                )
-            ))
-            ->add('visuals', 'snowcap_admin_inline', array(
-                'class' => 'Snowcap\AdminDemoBundle\Entity\Image',
-                'multiple' => true,
-                'property' => 'title',
-                'inline_admin' => $this->environment->getAdmin('image'),
-                'preview' => array(
-                    'type' => 'image',
-                )
-            ));
-        return $builder;
+        $form = $this->createForm(new TaskType(), $data);
+        return $form;
     }
 
     public function getFieldsets()
@@ -71,9 +48,9 @@ class TaskAdmin extends ContentAdmin
         );
     }
 
-    public function getBlankEntity()
+    public function buildEntity()
     {
-        $entity = parent::getBlankEntity();
+        $entity = parent::buildEntity();
         $entity->setTranslations(array(
             new TaskTranslation('fr'),
             new TaskTranslation('en'),

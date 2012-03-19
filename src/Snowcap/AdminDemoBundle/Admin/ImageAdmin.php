@@ -13,9 +13,9 @@ use Snowcap\AdminDemoBundle\Form\ImageType;
 class ImageAdmin extends ContentAdmin
 {
 
-    public function getList()
+    public function getDatalist()
     {
-        $datalist = $this->createDatalist('image', 'thumbnail');
+        $datalist = $this->createDatalist('thumbnail', 'image');
         $datalist
             ->add('webPath', 'image')
             ->add('title', 'label');
@@ -29,15 +29,15 @@ class ImageAdmin extends ContentAdmin
         return $builder->getForm();
     }
 
-    public function getForm($data)
+    public function getForm($data = null)
     {
-        $builder = $this->environment->get('form.factory')->createBuilder(new ImageType(), $data, array('data_class' => $this->getParam('entity_class')));
-        return $builder->getForm();
+        $form = $this->createForm(new ImageType(), $data);
+        return $form;
     }
 
-    public function getBlankEntity()
+    public function buildEntity()
     {
-        $entity = parent::getBlankEntity();
+        $entity = parent::buildEntity();
         $entity->setTranslations(array(
             new ImageTranslation('fr'),
             new ImageTranslation('en'),

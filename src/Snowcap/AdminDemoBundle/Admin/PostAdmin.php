@@ -1,11 +1,10 @@
 <?php
 namespace Snowcap\AdminDemoBundle\Admin;
 
-use Symfony\Component\Form\FormBuilder;
-
 use Snowcap\AdminBundle\Admin\ContentAdmin;
-use Snowcap\AdminBundle\Grid\ContentGrid;
 use Snowcap\AdminBundle\Datalist\ContentDatalist;
+
+use Snowcap\AdminDemoBundle\Form\PostType;
 
 class PostAdmin extends ContentAdmin
 {
@@ -14,12 +13,12 @@ class PostAdmin extends ContentAdmin
      *
      * @param \Snowcap\AdminBundle\Grid\ContentGrid $grid
      */
-    public function getList()
+    public function getDatalist()
     {
-        $datalist = $this->createDatalist('post', 'grid');
+        $datalist = $this->createDatalist('grid', 'post');
         $datalist
             ->add('title', 'text')
-            ->paginate(1);
+            ->paginate(10);
         return $datalist;
     }
 
@@ -30,21 +29,10 @@ class PostAdmin extends ContentAdmin
         return $builder->getForm();
     }
 
-    protected function buildForm(FormBuilder $builder)
+    public function getForm($data = null)
     {
-        $builder
-            ->add('title')
-            ->add('slug', 'slug', array('target' => 'title'))
-            ->add('body', 'markdown')
-            ->add('published_on', 'datetime', array(
-            'date_widget' => 'single_text',
-            'time_widget' => 'single_text',
-            'date_format' => 'dd/MM/yyyy',
-            'input' => 'datetime',
-            'attr' => array(
-                'placeholder' => 'dd/mm/yyyy hh:mm'
-            )
-        ));
-        return $builder;
+
+        $form = $this->createForm(new PostType(), $data);
+        return $form;
     }
 }
