@@ -10,12 +10,14 @@ $loader->registerNamespaces(array(
     'JMS'              => __DIR__.'/../vendor/bundles',
     'Doctrine\\Common' => __DIR__.'/../vendor/doctrine-common/lib',
     'Doctrine\\DBAL'   => __DIR__.'/../vendor/doctrine-dbal/lib',
+    'Doctrine\\Tests'   => __DIR__.'/../vendor/doctrine/tests',
     'Doctrine'         => __DIR__.'/../vendor/doctrine/lib',
     'Monolog'          => __DIR__.'/../vendor/monolog/src',
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
     'Knp'              => __DIR__.'/../vendor/bundles',
-    'Snowcap'          => __DIR__.'/../vendor/bundles'
+    'Snowcap'          => __DIR__.'/../vendor/bundles',
+    'DoctrineExtensions' => __DIR__.'/../vendor/DoctrineExtensions/lib',
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',

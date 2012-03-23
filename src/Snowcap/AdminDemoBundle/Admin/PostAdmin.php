@@ -1,10 +1,10 @@
 <?php
 namespace Snowcap\AdminDemoBundle\Admin;
 
-use Symfony\Component\Form\FormBuilder;
-
 use Snowcap\AdminBundle\Admin\ContentAdmin;
-use Snowcap\AdminBundle\Grid\ContentGrid;
+use Snowcap\AdminBundle\Datalist\ContentDatalist;
+
+use Snowcap\AdminDemoBundle\Form\PostType;
 
 class PostAdmin extends ContentAdmin
 {
@@ -13,18 +13,26 @@ class PostAdmin extends ContentAdmin
      *
      * @param \Snowcap\AdminBundle\Grid\ContentGrid $grid
      */
-    protected function configureContentGrid(ContentGrid $grid)
+    public function getDatalist()
     {
-        // TODO: Implement configureContentGrid() method.
+        $datalist = $this->createDatalist('grid', 'post');
+        $datalist
+            ->add('title', 'text')
+            ->paginate(10);
+        return $datalist;
     }
 
-    protected function buildForm(FormBuilder $builder)
+    public function getSearchForm()
     {
-        $builder
-            ->add('title')
-            ->add('slug', 'slug', array('target' => 'title'))
-            ->add('body', 'markdown')
-            ->add('published_on');
-        return $builder;
+        $builder = $this->environment->get('form.factory')->createBuilder('search')
+            ->add('e.title', 'text');
+        return $builder->getForm();
+    }
+
+    public function getForm($data = null)
+    {
+
+        $form = $this->createForm(new PostType(), $data);
+        return $form;
     }
 }

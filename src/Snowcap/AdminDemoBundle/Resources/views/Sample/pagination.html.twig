@@ -1,0 +1,10 @@
+{% extends 'SnowcapAdminBundle::base.html.twig' %}
+
+{% block body %}
+    <ul>
+    {% for post in paginator.getResult %}
+        <li>{{ post.title }}</li>
+    {% endfor %}
+    </ul>
+    {% include 'SnowcapBootstrapBundle:Widget:paginator.html.twig' %}
+{% endblock %}

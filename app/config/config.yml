@@ -63,14 +63,14 @@ jms_security_extra:
 snowcap_admin:
     sections:
         tasks:
-            label: Tasks
+            label: task
             admin_class: Snowcap\AdminDemoBundle\Admin\TaskAdmin
             entity_class: Snowcap\AdminDemoBundle\Entity\Task
         image:
-            label: Image
+            label: image
             admin_class: Snowcap\AdminDemoBundle\Admin\ImageAdmin
             entity_class: Snowcap\AdminDemoBundle\Entity\Image
         posts:
-            label: Posts
+            label: post
             admin_class: Snowcap\AdminDemoBundle\Admin\PostAdmin
             entity_class: Snowcap\AdminDemoBundle\Entity\Post
