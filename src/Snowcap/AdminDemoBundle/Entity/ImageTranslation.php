@@ -39,7 +39,7 @@ class ImageTranslation
      * @var
      *
      * @ORM\ManyToOne(targetEntity="Image", inversedBy="translations")
-     * @ORM\JoinColumn(name="image_id")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id",nullable=false)
      */
     private $image;
 

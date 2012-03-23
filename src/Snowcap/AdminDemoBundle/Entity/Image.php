@@ -39,7 +39,7 @@ class Image
     private $path;
 
     /**
-     * @ORM\OneToMany(targetEntity="ImageTranslation", mappedBy="image", indexBy="locale", cascade = {"all"})
+     * @ORM\OneToMany(targetEntity="ImageTranslation", mappedBy="image", indexBy="locale", cascade={"all"})
      */
     private $translations;
 

@@ -38,12 +38,12 @@ class TaskAdmin extends ContentAdmin
                 'rows' => array('translations'),
             ),
             array(
-                'legend' => 'Thumbnail',
-                'rows' => array('image'),
-            ),
-            array(
                 'legend' => 'Media',
                 'rows' => array('visuals'),
+            ),
+            array(
+                'legend' => 'Thumbnail',
+                'rows' => array('image'),
             ),
         );
     }
