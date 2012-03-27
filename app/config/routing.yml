@@ -9,3 +9,6 @@ snowcap_admin:
 
 snowcap_admin_demo:
   resource: "@SnowcapAdminDemoBundle/Controller"
+
+snowcap_im:
+  resource: "@SnowcapImBundle/Resources/config/routing.yml"

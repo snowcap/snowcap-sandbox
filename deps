@@ -80,3 +80,7 @@
 [SnowcapAdminBundle]
     git=https://github.com/snowcap/SnowcapAdminBundle.git
     target=/bundles/Snowcap/AdminBundle
+
+[SnowcapImBundle]
+    git=https://github.com/snowcap/SnowcapImBundle.git
+    target=/bundles/Snowcap/ImBundle

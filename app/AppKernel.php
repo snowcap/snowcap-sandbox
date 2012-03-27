@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Snowcap\BootstrapBundle\SnowcapBootstrapBundle(),
             new Snowcap\CoreBundle\SnowcapCoreBundle(),
             new Snowcap\AdminBundle\SnowcapAdminBundle(),
+            new Snowcap\ImBundle\SnowcapImBundle(),
             new Snowcap\AdminDemoBundle\SnowcapAdminDemoBundle(),
         );
 
