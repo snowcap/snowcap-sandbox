@@ -61,6 +61,7 @@ jms_security_extra:
     secure_all_services: false
 
 snowcap_admin:
+    bundle: SnowcapAdminDemoBundle
     sections:
         tasks:
             label: task
