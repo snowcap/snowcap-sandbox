@@ -37,6 +37,14 @@ class TaskTranslation
      */
     private $name;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    private $slug;
+
 
     /**
      * @var string $description
@@ -152,5 +160,21 @@ class TaskTranslation
     public function getTask()
     {
         return $this->task;
+    }
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }
