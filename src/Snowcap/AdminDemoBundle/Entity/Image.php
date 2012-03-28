@@ -5,7 +5,8 @@ namespace Snowcap\AdminDemoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
-use Snowcap\CoreBundle\Doctrine\Mapping as Snowcap;
+use Snowcap\CoreBundle\Doctrine\Mapping as SnowcapCore;
+use Snowcap\ImBundle\Doctrine\Mapping as SnowcapIm;
 
 /**
  * Snowcap\AdminDemoBundle\Entity\Image
@@ -48,7 +49,8 @@ class Image
     /**
      *
      * @Assert\File(maxSize="6000000")
-     * @Snowcap\File(path="uploads/images",mappedBy="path")
+     * @SnowcapCore\File(path="uploads/images",mappedBy="path")
+     * @SnowcapIm\Mogrify(params={"thumbnail"="100x100>"})
      */
     public $file;
 
