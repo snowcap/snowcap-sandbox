@@ -17,7 +17,7 @@ class ImageAdmin extends ContentAdmin
     {
         $datalist = $this->createDatalist('thumbnail', 'image');
         $datalist
-            ->add('webPath', 'image')
+            ->add('path', 'image')
             ->add('title', 'label');
         return $datalist;
     }

@@ -18,7 +18,7 @@ class ImageType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('file', 'snowcap_core_image', array('web_path' => 'webPath'))
+            ->add('file', 'snowcap_core_image', array('web_path' => 'path'))
             ->add('translations', 'collection', array(
                 'type' => new ImageTranslationType(),
                 'by_reference' => false,
