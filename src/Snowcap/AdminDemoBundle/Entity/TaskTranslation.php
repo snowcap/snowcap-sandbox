@@ -5,13 +5,16 @@ namespace Snowcap\AdminDemoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
+use Snowcap\CoreBundle\Entity\TranslationEntityInterface;
+use Snowcap\CoreBundle\Entity\TranslatableEntityInterface;
+
 /**
  * Snowcap\AdminDemoBundle\Entity\TaskTranslation
  *
  * @ORM\Table(name="task_translation")
  * @ORM\Entity
  */
-class TaskTranslation
+class TaskTranslation implements TranslationEntityInterface
 {
     /**
      * @var integer $id
@@ -47,19 +50,16 @@ class TaskTranslation
     private $description;
 
     /**
-     * @var
+     * @var Task
      *
      * @ORM\ManyToOne(targetEntity="Task", inversedBy="translations")
      */
     private $task;
 
-    public function __construct($locale = null){
-        $this->locale = $locale;
-    }
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -79,7 +79,7 @@ class TaskTranslation
     /**
      * Get locale
      *
-     * @return string 
+     * @return string
      */
     public function getLocale()
     {
@@ -99,7 +99,7 @@ class TaskTranslation
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -153,4 +153,16 @@ class TaskTranslation
     {
         return $this->task;
     }
+
+    public function getTranslatedEntity()
+    {
+        return $this->getTask();
+    }
+
+    public function setTranslatedEntity(TranslatableEntityInterface $translatedEntity)
+    {
+        $this->setTask($translatedEntity);
+    }
+
+
 }

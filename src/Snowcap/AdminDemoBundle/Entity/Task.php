@@ -6,13 +6,15 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 
+use Snowcap\CoreBundle\Entity\TranslatableEntityInterface;
+
 /**
  * Snowcap\AdminDemoBundle\Entity\Task
  *
  * @ORM\Table(name="task")
  * @ORM\Entity
  */
-class Task
+class Task implements TranslatableEntityInterface
 {
     /**
      * @var integer $id

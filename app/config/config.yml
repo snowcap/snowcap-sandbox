@@ -60,12 +60,17 @@ jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
 
+parameters:
+    locales: [en, fr, de, nl]
+
 snowcap_admin:
+    bundle: SnowcapAdminDemoBundle
     sections:
         tasks:
             label: task
             admin_class: Snowcap\AdminDemoBundle\Admin\TaskAdmin
             entity_class: Snowcap\AdminDemoBundle\Entity\Task
+            translation_entity_class: Snowcap\AdminDemoBundle\Entity\TaskTranslation
         image:
             label: image
             admin_class: Snowcap\AdminDemoBundle\Admin\ImageAdmin

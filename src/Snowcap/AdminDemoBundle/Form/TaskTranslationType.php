@@ -4,9 +4,11 @@ namespace Snowcap\AdminDemoBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\HttpFoundation\Request;
 
 class TaskTranslationType extends AbstractType
 {
+
     public function getName()
     {
         return 'task_translation';
@@ -19,8 +21,7 @@ class TaskTranslationType extends AbstractType
             ->add('description', 'wysiwyg', array(
                 'style_file' => 'bundles/snowcapadmindemo/js/ckeditor_styles.js',
                 'css_file' => 'bundles/snowcapadmindemo/css/ckeditor.css'
-            ))
-            ->add('locale', 'hidden');
+            ));
     }
 
     public function getDefaultOptions(array $options)
