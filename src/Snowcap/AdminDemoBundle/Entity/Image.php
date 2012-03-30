@@ -27,14 +27,6 @@ class Image
     private $id;
 
     /**
-     * @var string $title
-     *
-     * @ORM\Column(name="title", type="string", length=255)
-     * @Assert\NotBlank()
-     */
-    private $title;
-
-    /**
      * @var string $path
      *
      * @ORM\Column(name="path", type="string", length=255)
@@ -50,14 +42,13 @@ class Image
      *
      * @Assert\File(maxSize="6000000")
      * @SnowcapCore\File(path="uploads/images",mappedBy="path")
-     * @SnowcapIm\Mogrify(params={"thumbnail"="100x100>"})
+     * @SnowcapIm\Mogrify(params={"thumbnail"="2500x>"})
      */
     public $file;
 
     public function __construct(){
         $this->translations = new ArrayCollection();
     }
-
 
     /**
      * Get id
@@ -67,26 +58,6 @@ class Image
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set title
-     *
-     * @param string $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * Get title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
     }
 
     /**

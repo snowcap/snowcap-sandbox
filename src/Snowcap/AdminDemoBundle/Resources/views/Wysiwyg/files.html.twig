@@ -1,0 +1,27 @@
+{% extends 'SnowcapAdminBundle:Wysiwyg:base.html.twig' %}
+{% block body %}
+    <div class="wysiwyg-browser">
+        <ul class="nav nav-tabs">
+            <li><a href="{{ path('snowcap_admin_wysiwyg_browser_entities', arguments)}}" title="Browse in database">Browse in database</a></li>
+            <li class="active"><a href="{{ path('snowcap_admin_wysiwyg_browser_files', arguments)}}" title="Browse in files">Browse in files</a></li>
+        </ul>
+        <div class="tab-content">
+            {% if images|length > 0 %}
+                <ul class="thumbnails">
+                    {% for image in images %}
+                    <li>
+                        <a href="javascript:void(0);" class="thumbnail">
+                            {% imresize %}
+                            <img height="100" src="{{ 'uploads/' ~ image.getRelativePathname() }}" data-src="{{ asset('uploads/' ~ image.getRelativePathname()) }}" alt="{{ image.alt|default('Alternate text for image') }}"/>
+                            {% endimresize %}
+
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No image available</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

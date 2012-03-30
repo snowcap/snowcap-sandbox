@@ -4,7 +4,6 @@ namespace Snowcap\AdminDemoBundle\Admin;
 use Symfony\Component\Form\FormBuilder;
 
 use Snowcap\AdminBundle\Admin\ContentAdmin;
-use Snowcap\AdminBundle\Grid\ContentGrid;
 use Snowcap\AdminBundle\Datalist\ContentDatalist;
 use Snowcap\AdminDemoBundle\Entity\ImageTranslation;
 use Snowcap\AdminDemoBundle\Form\ImageTranslationType;
@@ -18,7 +17,7 @@ class ImageAdmin extends ContentAdmin
         $datalist = $this->createDatalist('thumbnail', 'image');
         $datalist
             ->add('path', 'image')
-            ->add('title', 'label');
+        ;
         return $datalist;
     }
 
@@ -61,9 +60,9 @@ class ImageAdmin extends ContentAdmin
     public function getPreview($entity) {
         return array(
             'identity' => $entity->getId(),
-            'title' => $entity->getTitle(),
+            'title' => 'blabla',
             'description' => 'ta mère en slip',
-            'image' => $entity->getWebPath()
+            'image' => $entity->getPath()
         );
     }
 

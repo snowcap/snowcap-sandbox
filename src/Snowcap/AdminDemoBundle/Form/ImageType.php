@@ -17,7 +17,6 @@ class ImageType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder
-            ->add('title')
             ->add('file', 'snowcap_core_image', array('web_path' => 'path'))
             ->add('translations', 'collection', array(
                 'type' => new ImageTranslationType(),

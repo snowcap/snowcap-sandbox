@@ -25,7 +25,6 @@ class TaskType extends AbstractType
             ))
             ->add('image', 'snowcap_admin_inline', array(
                 'class' => 'Snowcap\AdminDemoBundle\Entity\Image',
-                'property' => 'title',
                 'inline_admin' => 'image',
                 'preview' => array(
                     'type' => 'image',
@@ -34,7 +33,6 @@ class TaskType extends AbstractType
             ->add('visuals', 'snowcap_admin_inline', array(
                 'class' => 'Snowcap\AdminDemoBundle\Entity\Image',
                 'multiple' => true,
-                'property' => 'title',
                 'inline_admin' => 'image',
                 'preview' => array(
                     'type' => 'image',
