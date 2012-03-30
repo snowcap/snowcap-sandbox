@@ -40,6 +40,14 @@ class TaskTranslation implements TranslationEntityInterface
      */
     private $name;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    private $slug;
+
 
     /**
      * @var string $description
@@ -56,10 +64,13 @@ class TaskTranslation implements TranslationEntityInterface
      */
     private $task;
 
+    public function __construct($locale = null){
+        $this->locale = $locale;
+    }
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -152,6 +163,22 @@ class TaskTranslation implements TranslationEntityInterface
     public function getTask()
     {
         return $this->task;
+    }
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     public function getTranslatedEntity()

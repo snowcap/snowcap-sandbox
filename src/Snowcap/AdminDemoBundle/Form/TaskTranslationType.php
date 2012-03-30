@@ -18,6 +18,9 @@ class TaskTranslationType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('slug', 'slug', array(
+                'target' => 'name',
+            ))
             ->add('description', 'wysiwyg', array(
                 'style_file' => 'bundles/snowcapadmindemo/js/ckeditor_styles.js',
                 'css_file' => 'bundles/snowcapadmindemo/css/ckeditor.css'
