@@ -1,3 +1,5 @@
+parameters:
+    locales: ['en', 'fr']
 imports:
     - { resource: parameters.ini }
     - { resource: security.yml }

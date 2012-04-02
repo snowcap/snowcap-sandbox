@@ -43,7 +43,7 @@ class Image implements TranslatableEntityInterface
      *
      * @Assert\File(maxSize="6000000")
      * @SnowcapCore\File(path="uploads/images",mappedBy="path")
-     * @SnowcapIm\Mogrify(params={"thumbnail"="100x100>"})
+     * @SnowcapIm\Mogrify(params={"thumbnail"="2500x>"})
      */
     public $file;
 
