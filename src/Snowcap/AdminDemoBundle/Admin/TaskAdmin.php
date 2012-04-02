@@ -14,6 +14,7 @@ class TaskAdmin extends TranslatableContentAdmin
     {
         $datalist = $this->createDatalist('grid', 'task');
         $datalist
+            ->add('translations[%locale%].name', 'text', array('label' => 'Name'))
             ->add('id', 'text');
         return $datalist;
     }

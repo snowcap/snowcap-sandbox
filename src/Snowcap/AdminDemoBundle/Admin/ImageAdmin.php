@@ -15,7 +15,7 @@ class ImageAdmin extends TranslatableContentAdmin
         $datalist = $this->createDatalist('thumbnail', 'image');
         $datalist
             ->add('path', 'image')
-            ->add('translations[en].title', 'label');
+            ->add('translations[%locale%].title', 'label');
         return $datalist;
     }
 
@@ -32,7 +32,7 @@ class ImageAdmin extends TranslatableContentAdmin
     public function getSearchForm()
     {
         $builder = $this->environment->get('form.factory')->createBuilder('search')
-            ->add('e.title', 'text');
+            ->add('e.translations[en].title', 'text');
         return $builder->getForm();
     }
 
