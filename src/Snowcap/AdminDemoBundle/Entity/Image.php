@@ -7,6 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 use Snowcap\CoreBundle\Doctrine\Mapping as SnowcapCore;
 use Snowcap\ImBundle\Doctrine\Mapping as SnowcapIm;
+use Snowcap\CoreBundle\Entity\TranslatableEntityInterface;
 
 /**
  * Snowcap\AdminDemoBundle\Entity\Image
@@ -15,7 +16,7 @@ use Snowcap\ImBundle\Doctrine\Mapping as SnowcapIm;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Image
+class Image implements TranslatableEntityInterface
 {
     /**
      * @var integer $id

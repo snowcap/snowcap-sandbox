@@ -1,13 +1,9 @@
 <?php
 namespace Snowcap\AdminDemoBundle\Admin;
 
-use Snowcap\AdminBundle\Admin\ContentAdmin;
 use Snowcap\AdminBundle\Admin\TranslatableContentAdmin;
 use Snowcap\AdminDemoBundle\Form\TaskType;
 use Snowcap\AdminDemoBundle\Form\TaskTranslationType;
-use Snowcap\AdminDemoBundle\Entity\TaskTranslation;
-use Snowcap\CoreBundle\Entity\TranslatableEntityInterface;
-use Snowcap\CoreBundle\Entity\TranslationEntityInterface;
 
 class TaskAdmin extends TranslatableContentAdmin
 {

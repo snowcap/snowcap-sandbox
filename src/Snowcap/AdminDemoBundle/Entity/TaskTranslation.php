@@ -118,22 +118,6 @@ class TaskTranslation implements TranslationEntityInterface
     }
 
     /**
-     * @param  $image
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-    }
-
-    /**
-     * @return
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
      * @param string $description
      */
     public function setDescription($description)

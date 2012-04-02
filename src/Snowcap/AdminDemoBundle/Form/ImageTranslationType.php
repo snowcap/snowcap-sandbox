@@ -13,8 +13,7 @@ class ImageTranslationType extends AbstractType {
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('locale', 'hidden');
+            ->add('title');
     }
 
     public function getDefaultOptions(array $options)

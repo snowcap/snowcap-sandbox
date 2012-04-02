@@ -26,24 +26,16 @@ class Task implements TranslatableEntityInterface
     private $id;
 
     /**
-     * @var Image
-     *
-     * @ORM\ManyToOne(targetEntity="Image", cascade={"persist"})
-     * @ORM\JoinColumn(name="image_id")
-     */
-    private $image;
-
-    /**
-     * @var
-     *
-     * @ORM\ManyToMany(targetEntity="Image", cascade={"persist"})
-     */
-    private $visuals;
-
-    /**
      * @ORM\OneToMany(targetEntity="TaskTranslation", mappedBy="task", indexBy="locale", cascade = {"all"})
      */
     private $translations;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="code", type="string", length=32)
+     */
+    private $code;
 
     public function __construct()
     {
@@ -59,38 +51,6 @@ class Task implements TranslatableEntityInterface
         return $this->id;
     }
 
-    /**
-     * @param \Snowcap\AdminDemoBundle\Entity\Image $image
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-    }
-
-    /**
-     * @return \Snowcap\AdminDemoBundle\Entity\Image
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * @param  $visuals
-     */
-    public function setVisuals($visuals)
-    {
-        $this->visuals = $visuals;
-    }
-
-    /**
-     * @return
-     */
-    public function getVisuals()
-    {
-        return $this->visuals;
-    }
-
     public function setTranslations($translations)
     {
         foreach($translations as $translation) {
@@ -102,6 +62,22 @@ class Task implements TranslatableEntityInterface
     public function getTranslations()
     {
         return $this->translations;
+    }
+
+    /**
+     * @param string $code
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
     }
 
 }
