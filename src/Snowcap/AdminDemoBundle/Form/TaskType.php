@@ -21,7 +21,6 @@ class TaskType extends AbstractType
         $builder
             ->add('image', 'snowcap_admin_inline', array(
                 'class' => 'Snowcap\AdminDemoBundle\Entity\Image',
-                'property' => 'title',
                 'inline_admin' => 'image',
                 'preview' => array(
                     'type' => 'image',
