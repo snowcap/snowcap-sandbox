@@ -75,6 +75,7 @@ snowcap_admin:
             label: image
             admin_class: Snowcap\AdminDemoBundle\Admin\ImageAdmin
             entity_class: Snowcap\AdminDemoBundle\Entity\Image
+            translation_entity_class: Snowcap\AdminDemoBundle\Entity\ImageTranslation
         posts:
             label: post
             admin_class: Snowcap\AdminDemoBundle\Admin\PostAdmin

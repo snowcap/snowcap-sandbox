@@ -11,22 +11,13 @@ class ImageType extends AbstractType
 {
     public function getName()
     {
-        return 'image_translation';
+        return 'image';
     }
 
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('file', 'snowcap_core_image', array('web_path' => 'path'))
-            ->add('translations', 'collection', array(
-                'type' => new ImageTranslationType(),
-                'by_reference' => false,
-                'allow_add' => true,
-                'tabbable' => true,
-                'property' => 'locale',
-                'html_id' => 'image'
-        ));
+            ->add('file', 'snowcap_core_image', array('web_path' => 'path'));
     }
 
     public function getDefaultOptions(array $options)

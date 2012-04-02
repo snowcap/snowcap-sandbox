@@ -4,13 +4,16 @@ namespace Snowcap\AdminDemoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Snowcap\CoreBundle\Entity\TranslationEntityInterface;
+use Snowcap\CoreBundle\Entity\TranslatableEntityInterface;
+
 /**
  * Snowcap\AdminDemoBundle\Entity\ImageTranslation
  *
  * @ORM\Table(name="image_translation")
  * @ORM\Entity
  */
-class ImageTranslation
+class ImageTranslation implements TranslationEntityInterface
 {
     /**
      * @var integer $id
@@ -111,4 +114,16 @@ class ImageTranslation
     {
         return $this->image;
     }
+
+    public function getTranslatedEntity()
+    {
+        return $this->getImage();
+    }
+
+    public function setTranslatedEntity(TranslatableEntityInterface $translatedEntity)
+    {
+        $this->setImage($translatedEntity);
+    }
+
+
 }

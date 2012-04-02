@@ -7,6 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 use Snowcap\CoreBundle\Doctrine\Mapping as SnowcapCore;
 use Snowcap\ImBundle\Doctrine\Mapping as SnowcapIm;
+use Snowcap\CoreBundle\Entity\TranslatableEntityInterface;
 
 /**
  * Snowcap\AdminDemoBundle\Entity\Image
@@ -15,7 +16,7 @@ use Snowcap\ImBundle\Doctrine\Mapping as SnowcapIm;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Image
+class Image implements TranslatableEntityInterface
 {
     /**
      * @var integer $id
@@ -25,14 +26,6 @@ class Image
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @var string $title
-     *
-     * @ORM\Column(name="title", type="string", length=255)
-     * @Assert\NotBlank()
-     */
-    private $title;
 
     /**
      * @var string $path
@@ -58,7 +51,6 @@ class Image
         $this->translations = new ArrayCollection();
     }
 
-
     /**
      * Get id
      *
@@ -67,26 +59,6 @@ class Image
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set title
-     *
-     * @param string $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * Get title
-     *
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
     }
 
     /**
