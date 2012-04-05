@@ -2,12 +2,14 @@
 namespace Snowcap\AdminDemoBundle\Admin;
 
 use Symfony\Component\Form\FormBuilder;
+use Doctrine\ORM\Query\Expr\Join;
 
 use Snowcap\AdminBundle\Admin\TranslatableContentAdmin;
 use Snowcap\AdminDemoBundle\Form\ImageType;
 use Snowcap\AdminDemoBundle\Form\ImageTranslationType;
+use Snowcap\AdminBundle\Admin\InlineAdminInterface;
 
-class ImageAdmin extends TranslatableContentAdmin
+class ImageAdmin extends TranslatableContentAdmin implements InlineAdminInterface
 {
 
     public function getDatalist()
@@ -29,25 +31,20 @@ class ImageAdmin extends TranslatableContentAdmin
         return $this->createForm(new ImageTranslationType(), $data);
     }
 
-    public function getSearchForm()
-    {
-        $builder = $this->environment->get('form.factory')->createBuilder('search')
-            ->add('e.translations[en].title', 'text');
-        return $builder->getForm();
-    }
-
     public function filterAutocomplete($input) {
         $queryBuilder = $this->getQueryBuilder();
-        $queryBuilder->add('where', $queryBuilder->expr()->like('e.title', $queryBuilder->expr()->literal('%' . $input . '%')));
+        $queryBuilder
+            ->leftJoin('e.translations', 'tr', Join::WITH, 'tr.locale = :locale')
+            ->setParameter('locale', $this->environment->getWorkingLocale())
+            ->add('where', $queryBuilder->expr()->like('tr.title', $queryBuilder->expr()->literal('%' . $input . '%')));
         return $queryBuilder->getQuery()->getResult();
     }
 
-    public function getPreview($entity) {
+    public function getPreview() {
         return array(
-            'identity' => $entity->getId(),
-            'title' => $entity->getTitle(),
-            'description' => 'ta mère en slip',
-            'image' => $entity->getWebPath()
+            'identity' => 'id',
+            'title' => 'translations[%locale%].title',
+            'image' => 'path'
         );
     }
 

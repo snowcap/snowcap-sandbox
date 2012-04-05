@@ -19,7 +19,11 @@ class TaskType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder
-            ->add('code');
+            ->add('code')
+            ->add('image', 'snowcap_admin_inline', array(
+                'class' => 'Snowcap\AdminDemoBundle\Entity\Image',
+                'inline_admin' => 'image'
+            ));
         return $builder;
     }
 

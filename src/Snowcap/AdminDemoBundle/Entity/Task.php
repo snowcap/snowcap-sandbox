@@ -37,6 +37,14 @@ class Task implements TranslatableEntityInterface
      */
     private $code;
 
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="Image")
+     * @ORM\JoinColumn(name="image_id", nullable=true)
+     */
+    private $image;
+
     public function __construct()
     {
         $this->translations = new ArrayCollection();
@@ -78,6 +86,22 @@ class Task implements TranslatableEntityInterface
     public function getCode()
     {
         return $this->code;
+    }
+
+    /**
+     * @param  $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 
 }
