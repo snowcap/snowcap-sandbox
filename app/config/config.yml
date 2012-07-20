@@ -83,3 +83,11 @@ snowcap_admin:
             label: Post|Posts
             admin_class: Snowcap\AdminDemoBundle\Admin\PostAdmin
             entity_class: Snowcap\AdminDemoBundle\Entity\Post
+        menus:
+            label: Menu|Menus
+            admin_class: Snowcap\AdminDemoBundle\Admin\MenuAdmin
+            entity_class: Snowcap\AdminDemoBundle\Entity\Menu
+        menu_items:
+            label: Menu|Menu Items
+            admin_class: Snowcap\AdminDemoBundle\Admin\MenuItemAdmin
+            entity_class: Snowcap\AdminDemoBundle\Entity\MenuItem
