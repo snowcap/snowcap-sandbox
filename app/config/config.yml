@@ -70,16 +70,16 @@ snowcap_admin:
     bundle: SnowcapAdminDemoBundle
     sections:
         tasks:
-            label: task
+            label: Task|Tasks
             admin_class: Snowcap\AdminDemoBundle\Admin\TaskAdmin
             entity_class: Snowcap\AdminDemoBundle\Entity\Task
             translation_entity_class: Snowcap\AdminDemoBundle\Entity\TaskTranslation
         image:
-            label: image
+            label: Image|Images
             admin_class: Snowcap\AdminDemoBundle\Admin\ImageAdmin
             entity_class: Snowcap\AdminDemoBundle\Entity\Image
             translation_entity_class: Snowcap\AdminDemoBundle\Entity\ImageTranslation
         posts:
-            label: post
+            label: Post|Posts
             admin_class: Snowcap\AdminDemoBundle\Admin\PostAdmin
             entity_class: Snowcap\AdminDemoBundle\Entity\Post
