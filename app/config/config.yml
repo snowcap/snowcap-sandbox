@@ -64,7 +64,6 @@ jms_security_extra:
 
 parameters:
     locales: [en, fr, de, nl]
-    doctrine.orm.entity_manager.class: Snowcap\CoreBundle\Doctrine\ORM\EntityManager
 
 snowcap_admin:
     bundle: SnowcapAdminDemoBundle
