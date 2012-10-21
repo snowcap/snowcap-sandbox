@@ -22,5 +22,5 @@ monolog:
 assetic:
     use_controller: true
 
-snowcap_im:
-    binary_path: '/opt/local/bin/'
+#swiftmailer:
+#    delivery_address: me@example.com

@@ -1,17 +1,26 @@
+# Symfony recommandations
 /web/bundles/
+/web/uploads/*
 /app/bootstrap*
-/app/config/parameters.ini
-.idea
-.DS_Store
 /app/cache/*
 /app/logs/*
 /vendor/
-[core]
-        repositoryformatversion = 0
-        filemode = true
-        bare = false
-        logallrefupdates = true
-        ignorecase = true
-[remote "origin"]
-        fetch = +refs/heads/*:refs/remotes/origin/*
-        url = git@github.com:snowcap/snowcap-website.git
+/app/config/parameters.yml
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Snowcap needs
+web/cache
+app/Resources/translations
+.idea
+
+# Project-specific
+/src/Primento/LplBundle/DataFixtures/ORM/data/*
