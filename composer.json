@@ -22,6 +22,7 @@
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "snowcap/im-bundle": "dev-master",
         "snowcap/elastica-bundle": "dev-master",
+        "snowcap/admin-bundle": "dev-future",
         "leafo/lessphp": "dev-master"
     },
     "scripts": {
