@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Snowcap\CoreBundle\SnowcapCoreBundle(),
             new Snowcap\AdminBundle\SnowcapAdminBundle(),
+            new Snowcap\BootstrapBundle\SnowcapBootstrapBundle(),
             new Snowcap\ImBundle\SnowcapImBundle(),
             new Snowcap\AdminDemoBundle\SnowcapAdminDemoBundle(),
         );

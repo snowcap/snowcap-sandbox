@@ -12,3 +12,7 @@ snowcap_admin_demo:
 
 snowcap_im:
   resource: "@SnowcapImBundle/Resources/config/routing.yml"
+
+snowcap_admin_extra:
+    resource: .
+    type: extra

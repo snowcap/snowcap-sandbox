@@ -1,17 +1,32 @@
 <?php
 namespace Snowcap\AdminDemoBundle\Admin;
 
+use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Form\FormBuilder;
-use Doctrine\ORM\Query\Expr\Join;
+use Symfony\Component\Routing\RouteCollection;
+use Symfony\Component\Routing\Route;
 
-use Snowcap\AdminBundle\Admin\TranslatableContentAdmin;
 use Snowcap\AdminDemoBundle\Form\ImageType;
-use Snowcap\AdminDemoBundle\Form\ImageTranslationType;
-use Snowcap\AdminBundle\Admin\InlineAdminInterface;
+use Snowcap\AdminBundle\Admin\ContentAdmin;
 
-class ImageAdmin extends TranslatableContentAdmin implements InlineAdminInterface
+class ImageAdmin extends ContentAdmin
 {
+    /**
+     * @var \Symfony\Component\Routing\RouterInterface
+     */
+    private $router;
 
+    /**
+     * @param \Symfony\Component\Routing\RouterInterface $router
+     */
+    public function __construct(RouterInterface $router)
+    {
+       $this->router = $router;
+    }
+
+    /**
+     * @return \Snowcap\AdminBundle\Datalist\AbstractDatalist
+     */
     public function getDatalist()
     {
         $datalist = $this->createDatalist('thumbnail', 'image');
@@ -21,31 +36,47 @@ class ImageAdmin extends TranslatableContentAdmin implements InlineAdminInterfac
         return $datalist;
     }
 
+    /**
+     * @param array $data
+     * @return \Symfony\Component\Form\Form
+     */
     public function getForm($data = null)
     {
         return $this->createForm(new ImageType(), $data);
     }
 
-    public function getTranslationForm($data = null)
+    /**
+     * @return string
+     */
+    public function getDefaultUrl()
     {
-        return $this->createForm(new ImageTranslationType(), $data);
+        return $this->router->generate('snowcap_admindemo_image_index');
     }
 
-    public function filterAutocomplete($input) {
-        $queryBuilder = $this->getQueryBuilder();
-        $queryBuilder
-            ->leftJoin('e.translations', 'tr', Join::WITH, 'tr.locale = :locale')
-            ->setParameter('locale', $this->environment->getWorkingLocale())
-            ->add('where', $queryBuilder->expr()->like('tr.title', $queryBuilder->expr()->literal('%' . $input . '%')));
-        return $queryBuilder->getQuery()->getResult();
+    /**
+     * @return string
+     */
+    public function getEntityClass()
+    {
+        return 'Snowcap\AdminDemoBundle\Entity\Image';
     }
 
-    public function getPreview() {
-        return array(
-            'identity' => 'id',
-            'title' => 'translations[%locale%].title',
-            'image' => 'path'
-        );
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return 'image';
     }
 
+    /**
+     * @param string $alias
+     * @param \Symfony\Component\Routing\RouteCollection $routeCollection
+     */
+    public function addRoutes($alias, RouteCollection $routeCollection)
+    {
+        $defaults = array('_controller' => 'SnowcapAdminBundle:Content:index', 'alias' => $alias);
+        $route = new Route('/images', $defaults);
+        $routeCollection->add('snowcap_admindemo_image_index', $route);
+    }
 }
