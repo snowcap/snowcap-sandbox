@@ -6,7 +6,5 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class SnowcapAdminDemoBundle extends Bundle
 {
-    public function getParent() {
-        return "SnowcapAdminBundle";
-    }
+
 }
