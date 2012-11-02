@@ -3,27 +3,36 @@
 namespace Snowcap\AdminDemoBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
-
-use \Snowcap\AdminDemoBundle\Entity\ImageTranslation;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ImageType extends AbstractType
 {
-    public function getName()
-    {
-        return 'image';
-    }
-
-    public function buildForm(FormBuilder $builder, array $options)
+    /**
+     * @param \Symfony\Component\Form\FormBuilderInterface $builder
+     * @param array $options
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('file', 'snowcap_core_image', array('web_path' => 'path'));
     }
 
-    public function getDefaultOptions(array $options)
+    /**
+     * @param \Symfony\Component\OptionsResolver\OptionsResolverInterface $resolver
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        return array('data_class' => 'Snowcap\AdminDemoBundle\Entity\Image');
+        $resolver->setDefaults(array(
+            'data_class' => 'Snowcap\AdminDemoBundle\Entity\Image'
+        ));
     }
 
-
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return 'image';
+    }
 }

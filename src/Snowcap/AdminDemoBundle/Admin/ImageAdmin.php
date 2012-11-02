@@ -42,7 +42,7 @@ class ImageAdmin extends ContentAdmin
      */
     public function getForm($data = null)
     {
-        return $this->createForm(new ImageType(), $data);
+        return $this->formFactory->create(new ImageType(), $data);
     }
 
     /**
@@ -50,7 +50,7 @@ class ImageAdmin extends ContentAdmin
      */
     public function getDefaultUrl()
     {
-        return $this->router->generate('snowcap_admindemo_image_index');
+        return $this->router->generate('snowcap_admin_image_index');
     }
 
     /**
@@ -67,16 +67,5 @@ class ImageAdmin extends ContentAdmin
     public function getName()
     {
         return 'image';
-    }
-
-    /**
-     * @param string $alias
-     * @param \Symfony\Component\Routing\RouteCollection $routeCollection
-     */
-    public function addRoutes($alias, RouteCollection $routeCollection)
-    {
-        $defaults = array('_controller' => 'SnowcapAdminBundle:Content:index', 'alias' => $alias);
-        $route = new Route('/images', $defaults);
-        $routeCollection->add('snowcap_admindemo_image_index', $route);
     }
 }
