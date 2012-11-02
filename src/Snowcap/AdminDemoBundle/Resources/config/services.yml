@@ -1,6 +1,7 @@
 services:
-    snowcap_admin_demo.image_admin:
+    snowcap_admindemo.image_admin:
         class: Snowcap\AdminDemoBundle\Admin\ImageAdmin
+        parent: snowcap_admin.admin_content
         arguments: [@router]
         tags:
-            - { name: snowcap_admin.admin, alias: image }
+            - { name: snowcap_admin.admin, alias: image, label: Image|Images }
