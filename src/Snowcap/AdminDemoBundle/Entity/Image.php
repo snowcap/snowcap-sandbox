@@ -4,9 +4,8 @@ namespace Snowcap\AdminDemoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Doctrine\Common\Collections\ArrayCollection;
 use Snowcap\CoreBundle\Doctrine\Mapping as SnowcapCore;
-use Snowcap\ImBundle\Doctrine\Mapping as SnowcapIm;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Snowcap\AdminDemoBundle\Entity\Image
@@ -27,6 +26,14 @@ class Image
     private $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank
+     */
+    private $name;
+
+    /**
      * @var string $path
      *
      * @ORM\Column(name="path", type="string", length=255)
@@ -34,16 +41,12 @@ class Image
     private $path;
 
     /**
+     * @var File
      *
      * @Assert\File(maxSize="6000000")
      * @SnowcapCore\File(path="uploads/images",mappedBy="path")
-     * @SnowcapIm\Mogrify(params={"thumbnail"="2500x>"})
      */
-    public $file;
-
-    public function __construct(){
-        $this->translations = new ArrayCollection();
-    }
+    private $file;
 
     /**
      * Get id
@@ -73,5 +76,37 @@ class Image
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * @param \Symfony\Component\HttpFoundation\File\File $file
+     */
+    public function setFile(File $file)
+    {
+        $this->file = $file;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 }

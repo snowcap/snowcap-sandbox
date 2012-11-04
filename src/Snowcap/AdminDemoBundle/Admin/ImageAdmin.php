@@ -31,6 +31,7 @@ class ImageAdmin extends ContentAdmin
     {
         $datalist = $this->createDatalist('thumbnail', 'image');
         $datalist
+            ->add('name', 'label')
             ->add('path', 'image');
         return $datalist;
     }
