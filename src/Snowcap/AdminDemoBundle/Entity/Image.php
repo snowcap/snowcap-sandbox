@@ -7,7 +7,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 use Snowcap\CoreBundle\Doctrine\Mapping as SnowcapCore;
 use Snowcap\ImBundle\Doctrine\Mapping as SnowcapIm;
-use Snowcap\CoreBundle\Entity\TranslatableEntityInterface;
 
 /**
  * Snowcap\AdminDemoBundle\Entity\Image
@@ -16,7 +15,7 @@ use Snowcap\CoreBundle\Entity\TranslatableEntityInterface;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Image implements TranslatableEntityInterface
+class Image
 {
     /**
      * @var integer $id
@@ -33,11 +32,6 @@ class Image implements TranslatableEntityInterface
      * @ORM\Column(name="path", type="string", length=255)
      */
     private $path;
-
-    /**
-     * @ORM\OneToMany(targetEntity="ImageTranslation", mappedBy="image", indexBy="locale", cascade={"all"})
-     */
-    private $translations;
 
     /**
      *
@@ -79,18 +73,5 @@ class Image implements TranslatableEntityInterface
     public function getPath()
     {
         return $this->path;
-    }
-
-    public function setTranslations($translations)
-    {
-        foreach($translations as $translation) {
-            $translation->setImage($this);
-            $this->translations->add($translation);
-        }
-    }
-
-    public function getTranslations()
-    {
-        return $this->translations;
     }
 }

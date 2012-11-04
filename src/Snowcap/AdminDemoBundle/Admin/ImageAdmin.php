@@ -31,8 +31,7 @@ class ImageAdmin extends ContentAdmin
     {
         $datalist = $this->createDatalist('thumbnail', 'image');
         $datalist
-            ->add('path', 'image')
-            ->add('translations[%locale%].title', 'label');
+            ->add('path', 'image');
         return $datalist;
     }
 
