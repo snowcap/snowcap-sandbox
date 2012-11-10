@@ -12,19 +12,6 @@ use Snowcap\AdminBundle\Admin\ContentAdmin;
 class ImageAdmin extends ContentAdmin
 {
     /**
-     * @var \Symfony\Component\Routing\RouterInterface
-     */
-    private $router;
-
-    /**
-     * @param \Symfony\Component\Routing\RouterInterface $router
-     */
-    public function __construct(RouterInterface $router)
-    {
-       $this->router = $router;
-    }
-
-    /**
      * @return \Snowcap\AdminBundle\Datalist\AbstractDatalist
      */
     public function getDatalist()
@@ -43,14 +30,6 @@ class ImageAdmin extends ContentAdmin
     public function getForm($data = null)
     {
         return $this->formFactory->create(new ImageType(), $data);
-    }
-
-    /**
-     * @return string
-     */
-    public function getDefaultUrl()
-    {
-        return $this->router->generate('snowcap_admin_image_index');
     }
 
     /**
