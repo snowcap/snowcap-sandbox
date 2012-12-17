@@ -2,6 +2,15 @@ services:
     snowcap_admindemo.image_admin:
         class: Snowcap\AdminDemoBundle\Admin\ImageAdmin
         parent: snowcap_admin.admin_content
-        arguments: [@router]
         tags:
             - { name: snowcap_admin.admin, alias: image, label: Image|Images }
+    snowcap_admindemo.company_admin:
+        class: Snowcap\AdminDemoBundle\Admin\CompanyAdmin
+        parent: snowcap_admin.admin_content
+        tags:
+            - { name: snowcap_admin.admin, alias: company, label: Company|Companies }
+    snowcap_admindemo.employee_admin:
+        class: Snowcap\AdminDemoBundle\Admin\EmployeeAdmin
+        parent: snowcap_admin.admin_content
+        tags:
+            - { name: snowcap_admin.admin, alias: employee, label: Employee|Employees }
