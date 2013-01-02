@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new Snowcap\BootstrapBundle\SnowcapBootstrapBundle(),
             new Snowcap\ImBundle\SnowcapImBundle(),
             new Snowcap\AdminDemoBundle\SnowcapAdminDemoBundle(),
+            new Snowcap\DatalistDemoBundle\SnowcapDatalistDemoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
