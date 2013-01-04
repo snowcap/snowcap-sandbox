@@ -1,6 +1,8 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-<h2>Test</h2>
-{{ datalist_widget(datalist) }}
+
+{% render 'SnowcapDatalistDemoBundle:Default:datalist1' %}
+{% render 'SnowcapDatalistDemoBundle:Default:datalist2' %}
+
 {% endblock %}
