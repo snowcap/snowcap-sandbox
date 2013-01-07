@@ -18,11 +18,11 @@
         "sensio/generator-bundle": "2.1.*",
         "jms/security-extra-bundle": "1.2.*",
         "jms/di-extra-bundle": "1.1.*",
-        "snowcap/core-bundle": "dev-future",
+        "snowcap/core-bundle": "dev-datalist",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "snowcap/im-bundle": "dev-master",
+        "snowcap/im-bundle": "dev-future",
         "snowcap/elastica-bundle": "dev-master",
-        "snowcap/admin-bundle": "dev-future",
+        "snowcap/admin-bundle": "dev-datalist",
         "leafo/lessphp": "dev-master"
     },
     "scripts": {
