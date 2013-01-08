@@ -1,2 +1,8 @@
-<h2>{{ datalist_title }}</h2>
-{{ datalist_widget(datalist) }}
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <h2>{{ datalist_title }}</h2>
+    {{ datalist_widget(datalist) }}
+
+{% endblock %}

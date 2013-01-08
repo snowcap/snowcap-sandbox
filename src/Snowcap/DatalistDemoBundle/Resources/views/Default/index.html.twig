@@ -2,7 +2,11 @@
 
 {% block body %}
 
-{% render 'SnowcapDatalistDemoBundle:Default:datalist1' %}
-{% render 'SnowcapDatalistDemoBundle:Default:datalist2' %}
+    <h2>Choose a datalist</h2>
+
+    <ul>
+        <li><a href="{{ path('snowcap_datalistdemo_default_datalist1') }}">Datalist 1</a></li>
+        <li><a href="{{ path('snowcap_datalistdemo_default_datalist2') }}">Datalist 2</a></li>
+    </ul>
 
 {% endblock %}

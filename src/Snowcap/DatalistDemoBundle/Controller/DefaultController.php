@@ -17,7 +17,7 @@ use Snowcap\AdminBundle\Datalist\Datasource\ArrayDatasource;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="snowcap_datalistdemo_default_index")
      * @Template()
      */
     public function indexAction()
@@ -26,11 +26,15 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/datalist1", name="snowcap_datalistdemo_default_datalist1")
      * @Template("SnowcapDatalistDemoBundle:Default:datalist.html.twig")
      */
     public function datalist1Action()
     {
-        $datalist = $this->getDatalistFactory()->createBuilder('datalist', array('data_class' => 'Snowcap\DatalistDemoBundle\Entity\Player'))
+        $datalist = $this->getDatalistFactory()->createBuilder('datalist', array(
+                'data_class' => 'Snowcap\DatalistDemoBundle\Entity\Player',
+                'limit_per_page' => 10
+            ))
             ->addField('firstName')
             ->addField('lastName')
             ->getDatalist();
@@ -39,11 +43,10 @@ class DefaultController extends Controller
             ->select('p')
             ->from('SnowcapDatalistDemoBundle:Player', 'p');
         $datasource = new DoctrineORMDatasource($queryBuilder);
-        $datasource
-            ->paginate()
-            ->setPage(1);
 
-        $datalist->setDataSource($datasource);
+        $datalist
+            ->setDataSource($datasource)
+            ->setPage($this->getRequest()->get('page'));
 
         return array(
             'datalist_title' => 'Regular datalist with Doctrine ORM datasource',
@@ -52,13 +55,16 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/datalist2", name="snowcap_datalistdemo_default_datalist2")
      * @Template("SnowcapDatalistDemoBundle:Default:datalist.html.twig")
      */
     public function datalist2Action()
     {
         $faker = FakerFactory::create();
 
-        $datalist = $this->getDatalistFactory()->createBuilder()
+        $datalist = $this->getDatalistFactory()->createBuilder('datalist', array(
+                'limit_per_page' => 5
+            ))
             ->addField('player')
             ->addField('score')
             ->getDatalist();
@@ -75,7 +81,9 @@ class DefaultController extends Controller
         });
 
         $datasource = new ArrayDatasource($items);
-        $datalist->setDatasource($datasource);
+        $datalist
+            ->setDatasource($datasource)
+            ->setPage($this->getRequest()->get('page'));
 
         return array(
             'datalist_title' => 'Regular datalist with array datasource',
