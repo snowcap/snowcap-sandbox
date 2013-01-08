@@ -23,7 +23,8 @@
         "snowcap/im-bundle": "dev-future",
         "snowcap/elastica-bundle": "dev-master",
         "snowcap/admin-bundle": "dev-datalist",
-        "leafo/lessphp": "dev-master"
+        "leafo/lessphp": "dev-master",
+        "fzaninotto/faker": "1.1.*@dev"
     },
     "scripts": {
         "post-install-cmd": [

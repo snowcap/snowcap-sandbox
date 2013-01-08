@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
+use Faker\Factory as FakerFactory;
+
 use Snowcap\AdminBundle\Datalist\Datasource\DoctrineORMDatasource;
 use Snowcap\AdminBundle\Datalist\Datasource\ArrayDatasource;
 
@@ -54,65 +56,25 @@ class DefaultController extends Controller
      */
     public function datalist2Action()
     {
+        $faker = FakerFactory::create();
+
         $datalist = $this->getDatalistFactory()->createBuilder()
             ->addField('player')
             ->addField('score')
             ->getDatalist();
 
-        $datasource = new ArrayDatasource(array(
-            array(
-                'player' => 'PIE',
-                'score' => 5000,
-            ),
-            array(
-                'player' => 'JER',
-                'score' => 4900,
-            ),
-            array(
-                'player' => 'JER',
-                'score' => 4800,
-            ),
-            array(
-                'player' => 'PIE',
-                'score' => 4400,
-            ),
-            array(
-                'player' => 'EDW',
-                'score' => 4300,
-            ),
-            array(
-                'player' => 'ABD',
-                'score' => 4200,
-            ),
-            array(
-                'player' => 'JER',
-                'score' => 4100,
-            ),
-            array(
-                'player' => 'ABD',
-                'score' => 3845,
-            ),
-            array(
-                'player' => 'EDW',
-                'score' => 3680,
-            ),
-            array(
-                'player' => 'PIE',
-                'score' => 3360,
-            ),
-            array(
-                'player' => 'JER',
-                'score' => 3250,
-            ),
-            array(
-                'player' => 'EDW',
-                'score' => 3200,
-            ),
-            array(
-                'player' => 'JER',
-                'score' => 3000,
-            ),
-        ));
+        $items = array();
+        for($i = 0; $i <= 23; ++$i) {
+            $items[]= array(
+                'player' => $faker->toUpper($faker->lexify('???')),
+                'score' => $faker->numberBetween(100, 5000)
+            );
+        }
+        usort($items, function($row1, $row2) {
+            return $row1['score'] < $row2['score'];
+        });
+
+        $datasource = new ArrayDatasource($items);
         $datalist->setDatasource($datasource);
 
         return array(

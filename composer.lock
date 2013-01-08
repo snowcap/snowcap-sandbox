@@ -1,5 +1,5 @@
 {
-    "hash": "f3a6c012369987d806cdf73123977718",
+    "hash": "a065a276882b2a74b8519f53504ad8e7",
     "packages": [
         {
             "name": "dflydev/markdown",
@@ -444,6 +444,52 @@
             "keywords": [
                 "database",
                 "orm"
+            ]
+        },
+        {
+            "name": "fzaninotto/faker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker",
+                "reference": "140b5d4d3f7bb81b300ad4f53fe5b11b45aa8dde"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/fzaninotto/Faker/archive/140b5d4d3f7bb81b300ad4f53fe5b11b45aa8dde.zip",
+                "reference": "140b5d4d3f7bb81b300ad4f53fe5b11b45aa8dde",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "time": "2013-01-01 15:09:45",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Faker": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "faker",
+                "fixtures",
+                "data"
             ]
         },
         {
@@ -1871,9 +1917,7 @@
             ]
         }
     ],
-    "packages-dev": [
-
-    ],
+    "packages-dev": null,
     "aliases": [
 
     ],
@@ -1884,6 +1928,7 @@
         "snowcap/im-bundle": 20,
         "snowcap/elastica-bundle": 20,
         "snowcap/admin-bundle": 20,
-        "leafo/lessphp": 20
+        "leafo/lessphp": 20,
+        "fzaninotto/faker": 20
     }
 }
