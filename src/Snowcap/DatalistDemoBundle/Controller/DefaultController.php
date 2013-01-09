@@ -37,6 +37,7 @@ class DefaultController extends Controller
             ))
             ->addField('firstName')
             ->addField('lastName')
+            ->addField('born', 'datetime', array('format' => 'Y-m-d'))
             ->getDatalist();
 
         $queryBuilder = $this->getDoctrine()->getEntityManager()->createQueryBuilder()

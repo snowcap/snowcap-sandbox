@@ -36,6 +36,13 @@ class Player
     private $lastName;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="born", type="datetime")
+     */
+    private $born;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="rank", type="integer")
@@ -120,5 +127,21 @@ class Player
     public function getRank()
     {
         return $this->rank;
+    }
+
+    /**
+     * @param \DateTime $born
+     */
+    public function setBorn($born)
+    {
+        $this->born = $born;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getBorn()
+    {
+        return $this->born;
     }
 }
