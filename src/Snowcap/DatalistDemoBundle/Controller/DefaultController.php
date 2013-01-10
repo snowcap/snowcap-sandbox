@@ -61,7 +61,7 @@ class DefaultController extends Controller
         $datalist = $this->getDatalistFactory()->createBuilder('datalist', array(
                 'limit_per_page' => 5
             ))
-            ->addField('player')
+            ->addField('player', 'heading')
             ->addField('score')
             ->addField('mode', 'label', array(
                 'mappings' => array(
