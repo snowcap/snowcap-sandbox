@@ -1,0 +1,5 @@
+services:
+    snowcap_datalistdemo_datalist_player:
+        class: Snowcap\DatalistDemoBundle\Datalist\Type\PlayerType
+        tags:
+            - { name: snowcap_admin.datalist_type, alias: snowcap_datalistdemo_player }

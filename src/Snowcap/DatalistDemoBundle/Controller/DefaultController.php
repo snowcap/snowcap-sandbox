@@ -31,13 +31,8 @@ class DefaultController extends Controller
      */
     public function datalist1Action()
     {
-        $datalist = $this->getDatalistFactory()->createBuilder('datalist', array(
-                'data_class' => 'Snowcap\DatalistDemoBundle\Entity\Player',
-                'limit_per_page' => 10
-            ))
-            ->addField('firstName')
-            ->addField('lastName')
-            ->addField('born', 'datetime', array('format' => 'Y-m-d'))
+        $datalist = $this->getDatalistFactory()
+            ->createBuilder('snowcap_datalistdemo_player')
             ->getDatalist();
 
         $queryBuilder = $this->getDoctrine()->getEntityManager()->createQueryBuilder()
@@ -68,13 +63,20 @@ class DefaultController extends Controller
             ))
             ->addField('player')
             ->addField('score')
+            ->addField('mode', 'label', array(
+                'mappings' => array(
+                    'arcade' => 'Arcade',
+                    'time_attack' => 'Time attack'
+                )
+            ))
             ->getDatalist();
 
         $items = array();
         for($i = 0; $i <= 23; ++$i) {
             $items[]= array(
                 'player' => $faker->toUpper($faker->lexify('???')),
-                'score' => $faker->numberBetween(100, 5000)
+                'score' => $faker->numberBetween(100, 5000),
+                'mode' => $faker->randomElement(array('arcade', 'time_attack'))
             );
         }
         usort($items, function($row1, $row2) {
@@ -84,7 +86,7 @@ class DefaultController extends Controller
         $datasource = new ArrayDatasource($items);
         $datalist
             ->setDatasource($datasource)
-            ->setPage($this->getRequest()->get('page'));
+            ->setPage($this->getRequest()->get('page', 1));
 
         return array(
             'datalist_title' => 'Regular datalist with array datasource',
