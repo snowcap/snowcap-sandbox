@@ -22,10 +22,11 @@ class HighScoreType extends AbstractDatalistType
             ->addField('score')
             ->addField('pmop')
             ->addField('mode', 'label', array(
-                'mappings' => array(
-                    'arcade' => 'Arcade',
-                    'time_attack' => 'Time attack'
-                )
+                'mappings' => $this->getModes()
+            ))
+            ->addFilter('mode', 'choice', array(
+                'choices' => $this->getModes(),
+                'label' => 'Game mode'
             ));
     }
 
@@ -48,6 +49,14 @@ class HighScoreType extends AbstractDatalistType
     public function getName()
     {
         return 'snowcap_datalistdemo_highscore';
+    }
+
+    private function getModes()
+    {
+        return array(
+            'arcade' => 'Arcade',
+            'time_attack' => 'Time attack'
+        );
     }
 
 }

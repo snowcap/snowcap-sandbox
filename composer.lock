@@ -327,21 +327,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineFixturesBundle.git",
-                "reference": "9edc67af16e736a31605e7fa9c9e3edbd9db6427"
+                "reference": "95d1e0291878f64d376c878d9578239760cbaf73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/DoctrineFixturesBundle/archive/9edc67af16e736a31605e7fa9c9e3edbd9db6427.zip",
-                "reference": "9edc67af16e736a31605e7fa9c9e3edbd9db6427",
+                "url": "https://github.com/doctrine/DoctrineFixturesBundle/archive/95d1e0291878f64d376c878d9578239760cbaf73.zip",
+                "reference": "95d1e0291878f64d376c878d9578239760cbaf73",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "doctrine/data-fixtures": "*",
-                "doctrine/doctrine-bundle": "1.0.*",
-                "symfony/doctrine-bridge": ">=2.1.0,<2.3-dev"
+                "symfony/doctrine-bridge": ">=2.1.0,<2.3-dev",
+                "doctrine/doctrine-bundle": ">=1.0,<2.0"
             },
-            "time": "2012-10-22 13:57:52",
+            "time": "2013-01-13 12:20:51",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -982,23 +982,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ruflin/Elastica",
-                "reference": "609b08c0a3131330d5680ed98e6c9dca8c6f8fca"
+                "reference": "01ae47d42d3452788f75149d58f5333ea984d6d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/ruflin/Elastica/archive/609b08c0a3131330d5680ed98e6c9dca8c6f8fca.zip",
-                "reference": "609b08c0a3131330d5680ed98e6c9dca8c6f8fca",
+                "url": "https://github.com/ruflin/Elastica/archive/01ae47d42d3452788f75149d58f5333ea984d6d3.zip",
+                "reference": "01ae47d42d3452788f75149d58f5333ea984d6d3",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-12-16 09:44:37",
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "time": "2013-01-14 06:48:28",
             "type": "library",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
-                    "Elastica": "lib/"
+                    "Elastica": "lib/",
+                    "Elastica\\Test": "test/lib/"
                 }
             },
             "notification-url": "http://packagist.org/downloads/",
@@ -1169,12 +1173,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/snowcap/SnowcapAdminBundle.git",
-                "reference": "fcd254342a1db0aebc60c0b951985b4596040170"
+                "reference": "9bfcdd0e578c0bba21d6d36ec9132f9286fbfdef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/snowcap/SnowcapAdminBundle/archive/fcd254342a1db0aebc60c0b951985b4596040170.zip",
-                "reference": "fcd254342a1db0aebc60c0b951985b4596040170",
+                "url": "https://github.com/snowcap/SnowcapAdminBundle/archive/9bfcdd0e578c0bba21d6d36ec9132f9286fbfdef.zip",
+                "reference": "9bfcdd0e578c0bba21d6d36ec9132f9286fbfdef",
                 "shasum": ""
             },
             "require": {
@@ -1186,7 +1190,7 @@
                 "snowcap/core-bundle": "dev-datalist",
                 "snowcap/bootstrap-bundle": "dev-datalist"
             },
-            "time": "2013-01-10 17:08:36",
+            "time": "2013-01-14 09:58:19",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {

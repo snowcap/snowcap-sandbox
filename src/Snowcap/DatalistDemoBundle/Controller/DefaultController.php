@@ -57,25 +57,12 @@ class DefaultController extends Controller
      */
     public function datalist2Action()
     {
-        $faker = FakerFactory::create();
-
         $datalist = $this->getDatalistFactory()->create('snowcap_datalistdemo_highscore');
 
-        $items = array();
-        for($i = 0; $i <= 23; ++$i) {
-            $items[]= array(
-                'player' => $faker->toUpper($faker->randomElement($this->getPlayers())),
-                'score' => $faker->numberBetween(100, 5000),
-                'mode' => $faker->randomElement(array('arcade', 'time_attack'))
-            );
-        }
-        usort($items, function($row1, $row2) {
-            return $row1['score'] < $row2['score'];
-        });
-
-        $datasource = new ArrayDatasource($items, array(
+        $datasource = new ArrayDatasource($this->getItems(), array(
             'search' => 'player'
         ));
+
         $datalist
             ->setDatasource($datasource)
             ->setPage($this->getRequest()->get('page', 1))
@@ -90,11 +77,27 @@ class DefaultController extends Controller
     /**
      * @return array
      */
-    private function getPlayers()
+    private function getItems()
     {
-        return array(
+        $faker = FakerFactory::create();
+
+        $players = array(
             'Pierre', 'Jerome', 'Edwin', 'Abdel'
         );
+
+        $items = array();
+        for($i = 0; $i <= 23; ++$i) {
+            $items[]= array(
+                'player' => $faker->toUpper($faker->randomElement($players)),
+                'score' => $faker->numberBetween(100, 5000),
+                'mode' => $faker->randomElement(array('arcade', 'time_attack'))
+            );
+        }
+        usort($items, function($row1, $row2) {
+            return $row1['score'] < $row2['score'];
+        });
+
+        return $items;
     }
 
     /**
