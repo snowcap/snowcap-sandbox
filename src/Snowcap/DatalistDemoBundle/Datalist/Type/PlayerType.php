@@ -35,7 +35,8 @@ class PlayerType extends AbstractDatalistType
 
         $resolver->setDefaults(array(
             'data_class' => 'Snowcap\DatalistDemoBundle\Entity\Player',
-            'limit_per_page' => 10
+            'limit_per_page' => 10,
+            'searchable' => true
         ));
     }
 

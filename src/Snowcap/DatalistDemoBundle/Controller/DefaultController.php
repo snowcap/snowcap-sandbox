@@ -31,18 +31,19 @@ class DefaultController extends Controller
      */
     public function datalist1Action()
     {
-        $datalist = $this->getDatalistFactory()
-            ->createBuilder('snowcap_datalistdemo_player')
-            ->getDatalist();
+        $datalist = $this->getDatalistFactory()->create('snowcap_datalistdemo_player');
 
         $queryBuilder = $this->getDoctrine()->getEntityManager()->createQueryBuilder()
             ->select('p')
             ->from('SnowcapDatalistDemoBundle:Player', 'p');
-        $datasource = new DoctrineORMDatasource($queryBuilder);
+        $datasource = new DoctrineORMDatasource($queryBuilder, array(
+            'search' => array('p.lastName', 'p.firstName')
+        ));
 
         $datalist
             ->setDataSource($datasource)
-            ->setPage($this->getRequest()->get('page'));
+            ->setPage($this->getRequest()->get('page'))
+            ->setSearchQuery($this->getRequest()->get('search', null));
 
         return array(
             'datalist_title' => 'Regular datalist with Doctrine ORM datasource',
@@ -58,23 +59,12 @@ class DefaultController extends Controller
     {
         $faker = FakerFactory::create();
 
-        $datalist = $this->getDatalistFactory()->createBuilder('datalist', array(
-                'limit_per_page' => 5
-            ))
-            ->addField('player', 'heading')
-            ->addField('score')
-            ->addField('mode', 'label', array(
-                'mappings' => array(
-                    'arcade' => 'Arcade',
-                    'time_attack' => 'Time attack'
-                )
-            ))
-            ->getDatalist();
+        $datalist = $this->getDatalistFactory()->create('snowcap_datalistdemo_highscore');
 
         $items = array();
         for($i = 0; $i <= 23; ++$i) {
             $items[]= array(
-                'player' => $faker->toUpper($faker->lexify('???')),
+                'player' => $faker->toUpper($faker->randomElement($this->getPlayers())),
                 'score' => $faker->numberBetween(100, 5000),
                 'mode' => $faker->randomElement(array('arcade', 'time_attack'))
             );
@@ -83,14 +73,27 @@ class DefaultController extends Controller
             return $row1['score'] < $row2['score'];
         });
 
-        $datasource = new ArrayDatasource($items);
+        $datasource = new ArrayDatasource($items, array(
+            'search' => 'player'
+        ));
         $datalist
             ->setDatasource($datasource)
-            ->setPage($this->getRequest()->get('page', 1));
+            ->setPage($this->getRequest()->get('page', 1))
+            ->setSearchQuery($this->getRequest()->get('search', null));
 
         return array(
             'datalist_title' => 'Regular datalist with array datasource',
             'datalist' => $datalist
+        );
+    }
+
+    /**
+     * @return array
+     */
+    private function getPlayers()
+    {
+        return array(
+            'Pierre', 'Jerome', 'Edwin', 'Abdel'
         );
     }
 
