@@ -167,4 +167,12 @@ class Player
     {
         return $this->country;
     }
+
+    /**
+     * @return string
+     */
+    public function getFullName()
+    {
+        return $this->getFirstName() . ' ' . $this->getLastName();
+    }
 }

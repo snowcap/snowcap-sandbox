@@ -11,6 +11,8 @@ use Faker\Factory as FakerFactory;
 use Snowcap\AdminBundle\Datalist\Datasource\DoctrineORMDatasource;
 use Snowcap\AdminBundle\Datalist\Datasource\ArrayDatasource;
 
+use Snowcap\DatalistDemoBundle\Entity\Player;
+
 class DefaultController extends Controller
 {
     /**
@@ -44,10 +46,19 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/player/{player}", name="snowcap_datalistdemo_player")
+     * @Template("SnowcapDatalistDemoBundle:Default:player.html.twig")
+     */
+    public function playerAction(Player $player)
+    {
+        return array('player' => $player);
+    }
+
+    /**
      * @Route("/high-scores", name="snowcap_datalistdemo_highscores")
      * @Template("SnowcapDatalistDemoBundle:Default:datalist.html.twig")
      */
-    public function datalist2Action()
+    public function highScoresAction()
     {
         $datalist = $this->getDatalistFactory()->create('snowcap_datalistdemo_highscore');
 

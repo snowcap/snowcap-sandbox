@@ -1,0 +1,19 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <h2>{{ player.fullName }}</h2>
+    <dl>
+        <dt>First name</dt>
+        <dd>{{ player.firstName }}</dd>
+        <dt>Last name</dt>
+        <dd>{{ player.lastName }}</dd>
+        <dt>Born</dt>
+        <dd>{{ player.born|date('d/m/Y') }}</dd>
+        <dt>Rank</dt>
+        <dd>{{ player.rank }}</dd>
+        <dt>Country</dt>
+        <dd>{{ player.country.name }}</dd>
+    </dl>
+
+{% endblock %}

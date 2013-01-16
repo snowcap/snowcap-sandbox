@@ -42,7 +42,8 @@ class PlayerType extends AbstractDatalistType
             ->addFilter('country', 'choice', array(
                 'property_path' => 'c.code',
                 'choices' => $this->getCountries()
-            ));
+            ))
+            ->addAction('view', 'simple', array('route' => 'snowcap_datalistdemo_player'));
     }
 
     /**
