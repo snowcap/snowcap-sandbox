@@ -49,6 +49,12 @@ class Player
      */
     private $rank;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="country", type="string", length=3)
+     */
+    private $country;
 
     /**
      * Get id
@@ -143,5 +149,29 @@ class Player
     public function getBorn()
     {
         return $this->born;
+    }
+
+    /**
+     * @param string $country
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @return array
+     */
+    static public function getCountries()
+    {
+        return array('BEL', 'FRA', 'ESP');
     }
 }

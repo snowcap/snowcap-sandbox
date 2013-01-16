@@ -7,6 +7,8 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Snowcap\AdminBundle\Datalist\Type\AbstractDatalistType;
 use Snowcap\AdminBundle\Datalist\DatalistBuilder;
 
+use Snowcap\DatalistDemoBundle\Entity\Player;
+
 class PlayerType extends AbstractDatalistType
 {
     /**
@@ -23,6 +25,10 @@ class PlayerType extends AbstractDatalistType
             ->addField('born', 'datetime', array(
                 'label' => 'Born on',
                 'format' => 'Y-m-d',
+            ))
+            ->addField('country', 'text')
+            ->addFilter('country', 'choice', array(
+                'choices' => array_combine(Player::getCountries(), Player::getCountries())
             ));
     }
 

@@ -32,18 +32,13 @@ class DefaultController extends Controller
     public function datalist1Action()
     {
         $datalist = $this->getDatalistFactory()->create('snowcap_datalistdemo_player');
-
-        $queryBuilder = $this->getDoctrine()->getEntityManager()->createQueryBuilder()
-            ->select('p')
-            ->from('SnowcapDatalistDemoBundle:Player', 'p');
-        $datasource = new DoctrineORMDatasource($queryBuilder, array(
+        $datasource = new DoctrineORMDatasource($this->getPlayerQueryBuilder(), array(
             'search' => array('p.lastName', 'p.firstName')
         ));
-
         $datalist
             ->setDataSource($datasource)
             ->setPage($this->getRequest()->get('page'))
-            ->setSearchQuery($this->getRequest()->get('search', null));
+            ->bind($this->getRequest());
 
         return array(
             'datalist_title' => 'Regular datalist with Doctrine ORM datasource',
@@ -66,12 +61,24 @@ class DefaultController extends Controller
         $datalist
             ->setDatasource($datasource)
             ->setPage($this->getRequest()->get('page', 1))
-            ->setSearchQuery($this->getRequest()->get('search', null));
+            ->bind($this->getRequest());
 
         return array(
             'datalist_title' => 'Regular datalist with array datasource',
             'datalist' => $datalist
         );
+    }
+
+    /**
+     * @return \Doctrine\ORM\QueryBuilder
+     */
+    private function getPlayerQueryBuilder()
+    {
+        $queryBuilder = $this->getDoctrine()->getEntityManager()->createQueryBuilder()
+            ->select('p')
+            ->from('SnowcapDatalistDemoBundle:Player', 'p');
+
+        return $queryBuilder;
     }
 
     /**
