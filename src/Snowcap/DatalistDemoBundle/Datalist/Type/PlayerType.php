@@ -38,7 +38,7 @@ class PlayerType extends AbstractDatalistType
                 'label' => 'Born on',
                 'format' => 'Y-m-d',
             ))
-            ->addField('country.name', 'text')
+            ->addField('country.name', 'text', array('label' => 'Country'))
             ->addFilter('country', 'choice', array(
                 'property_path' => 'c.code',
                 'choices' => $this->getCountries()

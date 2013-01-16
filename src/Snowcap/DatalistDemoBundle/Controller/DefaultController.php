@@ -11,13 +11,10 @@ use Faker\Factory as FakerFactory;
 use Snowcap\AdminBundle\Datalist\Datasource\DoctrineORMDatasource;
 use Snowcap\AdminBundle\Datalist\Datasource\ArrayDatasource;
 
-/**
- * @Route("/datalist")
- */
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="snowcap_datalistdemo_default_index")
+     * @Route("/", name="snowcap_datalistdemo_index")
      * @Template()
      */
     public function indexAction()
@@ -26,10 +23,10 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/datalist1", name="snowcap_datalistdemo_default_datalist1")
+     * @Route("/players", name="snowcap_datalistdemo_players")
      * @Template("SnowcapDatalistDemoBundle:Default:datalist.html.twig")
      */
-    public function datalist1Action()
+    public function playersAction()
     {
         $datalist = $this->getDatalistFactory()->create('snowcap_datalistdemo_player');
         $datasource = new DoctrineORMDatasource($this->getPlayerQueryBuilder(), array(
@@ -47,7 +44,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/datalist2", name="snowcap_datalistdemo_default_datalist2")
+     * @Route("/high-scores", name="snowcap_datalistdemo_highscores")
      * @Template("SnowcapDatalistDemoBundle:Default:datalist.html.twig")
      */
     public function datalist2Action()

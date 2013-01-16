@@ -3,6 +3,7 @@ snowcap_admin_demo:
 
 snowcap_datalist_demo:
     resource: "@SnowcapDatalistDemoBundle/Controller/"
+    prefix: datalist
 
 snowcap_admin:
     resource: "@SnowcapAdminBundle/Resources/config/routing.yml"
