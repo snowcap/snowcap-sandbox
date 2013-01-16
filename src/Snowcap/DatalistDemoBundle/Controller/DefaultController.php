@@ -75,8 +75,9 @@ class DefaultController extends Controller
     private function getPlayerQueryBuilder()
     {
         $queryBuilder = $this->getDoctrine()->getEntityManager()->createQueryBuilder()
-            ->select('p')
-            ->from('SnowcapDatalistDemoBundle:Player', 'p');
+            ->select('p', 'c')
+            ->from('SnowcapDatalistDemoBundle:Player', 'p')
+            ->innerJoin('p.country', 'c');
 
         return $queryBuilder;
     }

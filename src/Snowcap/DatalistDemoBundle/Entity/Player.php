@@ -52,7 +52,8 @@ class Player
     /**
      * @var string
      *
-     * @ORM\Column(name="country", type="string", length=3)
+     * @ORM\ManyToOne(targetEntity="Country")
+     * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
      */
     private $country;
 
@@ -165,13 +166,5 @@ class Player
     public function getCountry()
     {
         return $this->country;
-    }
-
-    /**
-     * @return array
-     */
-    static public function getCountries()
-    {
-        return array('BEL', 'FRA', 'ESP');
     }
 }

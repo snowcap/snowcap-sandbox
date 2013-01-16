@@ -3,14 +3,26 @@
 namespace Snowcap\DatalistDemoBundle\Datalist\Type;
 
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Doctrine\ORM\EntityManager;
 
 use Snowcap\AdminBundle\Datalist\Type\AbstractDatalistType;
 use Snowcap\AdminBundle\Datalist\DatalistBuilder;
 
-use Snowcap\DatalistDemoBundle\Entity\Player;
-
 class PlayerType extends AbstractDatalistType
 {
+    /**
+     * @var \Doctrine\ORM\EntityManager
+     */
+    private $em;
+
+    /**
+     * @param \Doctrine\ORM\EntityManager $em
+     */
+    public function __construct(EntityManager $em)
+    {
+        $this->em = $em;
+    }
+
     /**
      * @param \Snowcap\AdminBundle\Datalist\DatalistBuilder $builder
      * @param array $options
@@ -26,9 +38,10 @@ class PlayerType extends AbstractDatalistType
                 'label' => 'Born on',
                 'format' => 'Y-m-d',
             ))
-            ->addField('country', 'text')
+            ->addField('country.name', 'text')
             ->addFilter('country', 'choice', array(
-                'choices' => array_combine(Player::getCountries(), Player::getCountries())
+                'property_path' => 'c.code',
+                'choices' => $this->getCountries()
             ));
     }
 
@@ -54,4 +67,16 @@ class PlayerType extends AbstractDatalistType
         return 'snowcap_datalistdemo_player';
     }
 
+    /**
+     * @return array
+     */
+    private function getCountries() {
+        $countries = $this->em->getRepository('SnowcapDatalistDemoBundle:Country')->findAll();
+        $countryChoices = array();
+        foreach($countries as $country) {
+            $countryChoices[$country->getCode()] = $country->getName();
+        }
+
+        return $countryChoices;
+    }
 }

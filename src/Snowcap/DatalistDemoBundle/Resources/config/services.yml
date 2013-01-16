@@ -1,6 +1,7 @@
 services:
     snowcap_datalistdemo_datalist_player:
         class: Snowcap\DatalistDemoBundle\Datalist\Type\PlayerType
+        arguments: [@doctrine.orm.entity_manager]
         tags:
             - { name: snowcap_admin.datalist_type, alias: snowcap_datalistdemo_player }
     snowcap_datalistdemo_datalist_highscore:
