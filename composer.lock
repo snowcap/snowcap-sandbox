@@ -1,5 +1,5 @@
 {
-    "hash": "a065a276882b2a74b8519f53504ad8e7",
+    "hash": "0116cfd10a4c5b84d66e205f94a661c2",
     "packages": [
         {
             "name": "dflydev/markdown",
@@ -193,19 +193,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal",
-                "reference": "4c33f633c48eeafe3408b308f6fc51743a21a3b7"
+                "reference": "fd45c6f6baa618d871f3201fabe76df5043abb1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/dbal/archive/4c33f633c48eeafe3408b308f6fc51743a21a3b7.zip",
-                "reference": "4c33f633c48eeafe3408b308f6fc51743a21a3b7",
+                "url": "https://github.com/doctrine/dbal/archive/fd45c6f6baa618d871f3201fabe76df5043abb1e.zip",
+                "reference": "fd45c6f6baa618d871f3201fabe76df5043abb1e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "doctrine/common": "2.3.*"
             },
-            "time": "2013-01-07 20:03:43",
+            "time": "2013-01-20 11:50:36",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -977,17 +977,72 @@
             ]
         },
         {
+            "name": "nelmio/alice",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nelmio/alice",
+                "reference": "1.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/nelmio/alice/archive/1.2.0.zip",
+                "reference": "1.2.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "fzaninotto/faker": ">=1.0,<2.0",
+                "symfony/yaml": ">=2.0,<3.0"
+            },
+            "require-dev": {
+                "doctrine/common": ">=2.3,<3.0",
+                "symfony/form": ">=2.1,<3.0",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "time": "2013-01-06 16:19:42",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Nelmio\\Alice\\": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nelmio",
+                    "homepage": "http://nelm.io"
+                }
+            ],
+            "description": "Expressive fixtures generator",
+            "keywords": [
+                "orm",
+                "data",
+                "test",
+                "Fixture"
+            ]
+        },
+        {
             "name": "ruflin/Elastica",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ruflin/Elastica",
-                "reference": "01ae47d42d3452788f75149d58f5333ea984d6d3"
+                "reference": "fba06ab23782b842ba4b164a51e134a18ca60a04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/ruflin/Elastica/archive/01ae47d42d3452788f75149d58f5333ea984d6d3.zip",
-                "reference": "01ae47d42d3452788f75149d58f5333ea984d6d3",
+                "url": "https://github.com/ruflin/Elastica/archive/fba06ab23782b842ba4b164a51e134a18ca60a04.zip",
+                "reference": "fba06ab23782b842ba4b164a51e134a18ca60a04",
                 "shasum": ""
             },
             "require": {
@@ -996,7 +1051,7 @@
             "require-dev": {
                 "phpunit/phpunit": "3.7.*"
             },
-            "time": "2013-01-14 06:48:28",
+            "time": "2013-01-17 14:48:56",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1029,12 +1084,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioDistributionBundle",
-                "reference": "781e1e585fc57cfaf37dc16275ebcaa19c8279b5"
+                "reference": "v2.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioDistributionBundle/archive/781e1e585fc57cfaf37dc16275ebcaa19c8279b5.zip",
-                "reference": "781e1e585fc57cfaf37dc16275ebcaa19c8279b5",
+                "url": "https://github.com/sensio/SensioDistributionBundle/archive/v2.1.7.zip",
+                "reference": "v2.1.7",
                 "shasum": ""
             },
             "require": {
@@ -1076,12 +1131,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioFrameworkExtraBundle",
-                "reference": "f050aa93cb1aa780f668020dddd6333b5c5d95c3"
+                "reference": "v2.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioFrameworkExtraBundle/archive/f050aa93cb1aa780f668020dddd6333b5c5d95c3.zip",
-                "reference": "f050aa93cb1aa780f668020dddd6333b5c5d95c3",
+                "url": "https://github.com/sensio/SensioFrameworkExtraBundle/archive/v2.1.7.zip",
+                "reference": "v2.1.7",
                 "shasum": ""
             },
             "require": {
@@ -1124,12 +1179,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioGeneratorBundle",
-                "reference": "74f519a1c4414d4a45dd12c9e86e29efb5a90b2c"
+                "reference": "v2.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioGeneratorBundle/archive/74f519a1c4414d4a45dd12c9e86e29efb5a90b2c.zip",
-                "reference": "74f519a1c4414d4a45dd12c9e86e29efb5a90b2c",
+                "url": "https://github.com/sensio/SensioGeneratorBundle/archive/v2.1.7.zip",
+                "reference": "v2.1.7",
                 "shasum": ""
             },
             "require": {
@@ -1173,12 +1228,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/snowcap/SnowcapAdminBundle.git",
-                "reference": "9bfcdd0e578c0bba21d6d36ec9132f9286fbfdef"
+                "reference": "37d01184c9b829eb3402e0650735a1cfee29f98d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/snowcap/SnowcapAdminBundle/archive/9bfcdd0e578c0bba21d6d36ec9132f9286fbfdef.zip",
-                "reference": "9bfcdd0e578c0bba21d6d36ec9132f9286fbfdef",
+                "url": "https://github.com/snowcap/SnowcapAdminBundle/archive/37d01184c9b829eb3402e0650735a1cfee29f98d.zip",
+                "reference": "37d01184c9b829eb3402e0650735a1cfee29f98d",
                 "shasum": ""
             },
             "require": {
@@ -1190,7 +1245,7 @@
                 "snowcap/core-bundle": "dev-datalist",
                 "snowcap/bootstrap-bundle": "dev-datalist"
             },
-            "time": "2013-01-14 09:58:19",
+            "time": "2013-01-16 21:03:40",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1289,12 +1344,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/snowcap/SnowcapCoreBundle.git",
-                "reference": "3696dcdd0ae745ee7ef39119a45b1d1b826252ac"
+                "reference": "b643fdfe0a47022f284b66494292e215628d98ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/snowcap/SnowcapCoreBundle/archive/3696dcdd0ae745ee7ef39119a45b1d1b826252ac.zip",
-                "reference": "3696dcdd0ae745ee7ef39119a45b1d1b826252ac",
+                "url": "https://github.com/snowcap/SnowcapCoreBundle/archive/b643fdfe0a47022f284b66494292e215628d98ea.zip",
+                "reference": "b643fdfe0a47022f284b66494292e215628d98ea",
                 "shasum": ""
             },
             "require": {
@@ -1308,7 +1363,7 @@
                 "fzaninotto/faker": "1.1.*@dev",
                 "doctrine/data-fixtures": "1.0.*@dev"
             },
-            "time": "2013-01-08 17:02:33",
+            "time": "2013-01-15 21:48:56",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1400,17 +1455,17 @@
         },
         {
             "name": "snowcap/im-bundle",
-            "version": "dev-future",
+            "version": "dev-master",
             "target-dir": "Snowcap/ImBundle",
             "source": {
                 "type": "git",
                 "url": "git://github.com/snowcap/SnowcapImBundle.git",
-                "reference": "ae9520ede5edbb3ff592fce5ceb11a1973773178"
+                "reference": "aff3a8e55177aceab3b5ae05d41d169c510c0634"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/snowcap/SnowcapImBundle/archive/ae9520ede5edbb3ff592fce5ceb11a1973773178.zip",
-                "reference": "ae9520ede5edbb3ff592fce5ceb11a1973773178",
+                "url": "https://github.com/snowcap/SnowcapImBundle/archive/aff3a8e55177aceab3b5ae05d41d169c510c0634.zip",
+                "reference": "aff3a8e55177aceab3b5ae05d41d169c510c0634",
                 "shasum": ""
             },
             "require": {
@@ -1421,7 +1476,7 @@
             "require-dev": {
                 "mikey179/vfsstream": "v1.0.0"
             },
-            "time": "2012-11-04 10:45:27",
+            "time": "2013-01-15 14:41:32",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1516,12 +1571,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/AsseticBundle",
-                "reference": "f9ccc30b26209ec6c97c346097958599f74c1ede"
+                "reference": "128d3aa1ea65f0615339f20f15f154bd2e7224bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/AsseticBundle/archive/f9ccc30b26209ec6c97c346097958599f74c1ede.zip",
-                "reference": "f9ccc30b26209ec6c97c346097958599f74c1ede",
+                "url": "https://github.com/symfony/AsseticBundle/archive/128d3aa1ea65f0615339f20f15f154bd2e7224bb.zip",
+                "reference": "128d3aa1ea65f0615339f20f15f154bd2e7224bb",
                 "shasum": ""
             },
             "require": {
@@ -1541,7 +1596,7 @@
             "suggest": {
                 "symfony/twig-bundle": ">=2.1.0,<2.3-dev"
             },
-            "time": "2013-01-09 22:35:35",
+            "time": "2013-01-19 21:58:23",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -1640,12 +1695,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/SwiftmailerBundle",
-                "reference": "2bf9cdefd8102e6409ec0762652cf81cb3b4c21a"
+                "reference": "v2.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/SwiftmailerBundle/archive/2bf9cdefd8102e6409ec0762652cf81cb3b4c21a.zip",
-                "reference": "2bf9cdefd8102e6409ec0762652cf81cb3b4c21a",
+                "url": "https://github.com/symfony/SwiftmailerBundle/archive/v2.1.7.zip",
+                "reference": "v2.1.7",
                 "shasum": ""
             },
             "require": {
@@ -1695,12 +1750,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "da0b0426efe708447a332e699eac5bc75b448f95"
+                "reference": "fada75c42051fde399a4aee30fb0eef757b8992a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/da0b0426efe708447a332e699eac5bc75b448f95.zip",
-                "reference": "da0b0426efe708447a332e699eac5bc75b448f95",
+                "url": "https://github.com/symfony/symfony/archive/fada75c42051fde399a4aee30fb0eef757b8992a.zip",
+                "reference": "fada75c42051fde399a4aee30fb0eef757b8992a",
                 "shasum": ""
             },
             "require": {
@@ -1749,7 +1804,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": ">=1.0,<1.3-dev"
             },
-            "time": "2013-01-12 20:28:26",
+            "time": "2013-01-20 08:33:14",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1832,18 +1887,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "3111e1265db1026323c589a5bd2d152871d7bbab"
+                "reference": "93c6a8dedc46c73ccdd61342de3d5e761e4412f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/archive/3111e1265db1026323c589a5bd2d152871d7bbab.zip",
-                "reference": "3111e1265db1026323c589a5bd2d152871d7bbab",
+                "url": "https://github.com/fabpot/Twig/archive/93c6a8dedc46c73ccdd61342de3d5e761e4412f6.zip",
+                "reference": "93c6a8dedc46c73ccdd61342de3d5e761e4412f6",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2013-01-08 16:56:12",
+            "time": "2013-01-18 09:58:04",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1889,6 +1944,7 @@
         "snowcap/elastica-bundle": 20,
         "snowcap/admin-bundle": 20,
         "leafo/lessphp": 20,
-        "fzaninotto/faker": 20
+        "fzaninotto/faker": 20,
+        "nelmio/alice": 20
     }
 }

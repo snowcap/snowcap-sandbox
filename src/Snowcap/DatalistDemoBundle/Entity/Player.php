@@ -139,7 +139,7 @@ class Player
     /**
      * @param \DateTime $born
      */
-    public function setBorn($born)
+    public function setBorn(\DateTime $born)
     {
         $this->born = $born;
     }
