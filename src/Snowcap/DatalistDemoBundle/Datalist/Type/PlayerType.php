@@ -43,7 +43,10 @@ class PlayerType extends AbstractDatalistType
                 'property_path' => 'c.code',
                 'choices' => $this->getCountries()
             ))
-            ->addAction('view', 'simple', array('route' => 'snowcap_datalistdemo_player'));
+            ->addAction('view', 'simple', array(
+                'route' => 'snowcap_datalistdemo_player',
+                'route_params' => array('player' => 'id')
+            ));
     }
 
     /**
