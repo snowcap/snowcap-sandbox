@@ -18,14 +18,14 @@
         "sensio/generator-bundle": "2.1.*",
         "jms/security-extra-bundle": "1.2.*",
         "jms/di-extra-bundle": "1.1.*",
-        "snowcap/core-bundle": "dev-datalist",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "snowcap/im-bundle": "dev-master",
-        "snowcap/elastica-bundle": "dev-master",
-        "snowcap/admin-bundle": "dev-datalist",
         "leafo/lessphp": "dev-master",
         "fzaninotto/faker": "1.1.*@dev",
-        "nelmio/alice": "1.0.*@dev"
+        "nelmio/alice": "1.0.*@dev",
+        "snowcap/core-bundle": "dev-master",
+        "snowcap/im-bundle": "dev-master",
+        "snowcap/elastica-bundle": "dev-master",
+        "snowcap/admin-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
