@@ -23,4 +23,5 @@ app/Resources/translations
 .idea
 
 # Project-specific
+composer.lock
 /src/Primento/LplBundle/DataFixtures/ORM/data/*
