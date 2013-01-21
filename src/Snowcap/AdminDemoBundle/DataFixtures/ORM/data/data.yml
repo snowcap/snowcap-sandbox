@@ -1,0 +1,11 @@
+Snowcap\AdminDemoBundle\Entity\Company:
+    company{1..30}:
+        name: <company()>
+        shortDescription: <bs()>
+        website: <url()>
+
+Snowcap\AdminDemoBundle\Entity\Employee:
+    user{1..40}:
+        firstName: <firstName()>
+        lastName: <lastName()>
+        company: @company*

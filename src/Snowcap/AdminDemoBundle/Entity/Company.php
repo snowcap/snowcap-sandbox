@@ -29,6 +29,13 @@ class Company
     /**
      * @var string
      *
+     * @ORM\Column(name="short_description", length=255)
+     */
+    private $shortDescription;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="website", type="string", length=255)
      */
     private $website;
@@ -55,6 +62,22 @@ class Company
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * @param string $shortDescription
+     */
+    public function setShortDescription($shortDescription)
+    {
+        $this->shortDescription = $shortDescription;
+    }
+
+    /**
+     * @return string
+     */
+    public function getShortDescription()
+    {
+        return $this->shortDescription;
     }
 
     /**

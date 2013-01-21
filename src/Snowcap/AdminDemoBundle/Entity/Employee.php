@@ -34,6 +34,14 @@ class Employee
     private $lastName;
 
     /**
+     * @var string
+     *
+     * @ORM\ManyToOne(targetEntity="Company")
+     * @ORM\JoinColumn(name="company_id", referencedColumnName="id", nullable=false)
+     */
+    private $company;
+
+    /**
      * @return int
      */
     public function getId()
@@ -71,5 +79,21 @@ class Employee
     public function getLastName()
     {
         return $this->lastName;
+    }
+
+    /**
+     * @param string $company
+     */
+    public function setCompany($company)
+    {
+        $this->company = $company;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCompany()
+    {
+        return $this->company;
     }
 }

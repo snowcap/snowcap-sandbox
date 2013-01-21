@@ -1,5 +1,5 @@
 {
-    "hash": "0116cfd10a4c5b84d66e205f94a661c2",
+    "hash": "b27f8b8fce9a83c131e849dbe157accb",
     "packages": [
         {
             "name": "dflydev/markdown",
@@ -380,12 +380,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/doctrine/doctrine2.git",
-                "reference": "6829c464e88cccd7a2a0714e42e95f3930b38e37"
+                "reference": "fdd0af34e6fced967b8751bc3e4792c11ef86d57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/doctrine2/archive/6829c464e88cccd7a2a0714e42e95f3930b38e37.zip",
-                "reference": "6829c464e88cccd7a2a0714e42e95f3930b38e37",
+                "url": "https://github.com/doctrine/doctrine2/archive/fdd0af34e6fced967b8751bc3e4792c11ef86d57.zip",
+                "reference": "fdd0af34e6fced967b8751bc3e4792c11ef86d57",
                 "shasum": ""
             },
             "require": {
@@ -397,7 +397,7 @@
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
-            "time": "2013-01-12 09:32:44",
+            "time": "2013-01-20 19:35:21",
             "bin": [
                 "bin/doctrine",
                 "bin/doctrine.php"
@@ -1037,12 +1037,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ruflin/Elastica",
-                "reference": "fba06ab23782b842ba4b164a51e134a18ca60a04"
+                "reference": "ef2ba8f6dc12a429bc9ac464336e2c0f498dfef2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/ruflin/Elastica/archive/fba06ab23782b842ba4b164a51e134a18ca60a04.zip",
-                "reference": "fba06ab23782b842ba4b164a51e134a18ca60a04",
+                "url": "https://github.com/ruflin/Elastica/archive/ef2ba8f6dc12a429bc9ac464336e2c0f498dfef2.zip",
+                "reference": "ef2ba8f6dc12a429bc9ac464336e2c0f498dfef2",
                 "shasum": ""
             },
             "require": {
@@ -1051,7 +1051,7 @@
             "require-dev": {
                 "phpunit/phpunit": "3.7.*"
             },
-            "time": "2013-01-17 14:48:56",
+            "time": "2013-01-20 14:37:56",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1223,17 +1223,17 @@
         },
         {
             "name": "snowcap/admin-bundle",
-            "version": "dev-datalist",
+            "version": "dev-master",
             "target-dir": "Snowcap/AdminBundle",
             "source": {
                 "type": "git",
                 "url": "git://github.com/snowcap/SnowcapAdminBundle.git",
-                "reference": "37d01184c9b829eb3402e0650735a1cfee29f98d"
+                "reference": "7cc49175b3607bb0c19f7b9af21a48dc6804d392"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/snowcap/SnowcapAdminBundle/archive/37d01184c9b829eb3402e0650735a1cfee29f98d.zip",
-                "reference": "37d01184c9b829eb3402e0650735a1cfee29f98d",
+                "url": "https://github.com/snowcap/SnowcapAdminBundle/archive/7cc49175b3607bb0c19f7b9af21a48dc6804d392.zip",
+                "reference": "7cc49175b3607bb0c19f7b9af21a48dc6804d392",
                 "shasum": ""
             },
             "require": {
@@ -1242,10 +1242,10 @@
                 "symfony/framework-bundle": "2.1.*",
                 "sensio/framework-extra-bundle": "2.1.x-dev",
                 "knplabs/knp-markdown-bundle": "1.2.x-dev",
-                "snowcap/core-bundle": "dev-datalist",
-                "snowcap/bootstrap-bundle": "dev-datalist"
+                "snowcap/core-bundle": "dev-master",
+                "snowcap/bootstrap-bundle": "dev-master"
             },
-            "time": "2013-01-16 21:03:40",
+            "time": "2013-01-20 19:42:51",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1283,17 +1283,17 @@
         },
         {
             "name": "snowcap/bootstrap-bundle",
-            "version": "dev-datalist",
+            "version": "dev-master",
             "target-dir": "Snowcap/BootstrapBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/snowcap/SnowcapBootstrapBundle",
-                "reference": "72b03e9c7a3ae1878604065c4c2d089afef2ed41"
+                "reference": "9c38e0f405f653d2606f719a96aee2b79a3036cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/snowcap/SnowcapBootstrapBundle/archive/72b03e9c7a3ae1878604065c4c2d089afef2ed41.zip",
-                "reference": "72b03e9c7a3ae1878604065c4c2d089afef2ed41",
+                "url": "https://github.com/snowcap/SnowcapBootstrapBundle/archive/9c38e0f405f653d2606f719a96aee2b79a3036cb.zip",
+                "reference": "9c38e0f405f653d2606f719a96aee2b79a3036cb",
                 "shasum": ""
             },
             "require": {
@@ -1301,7 +1301,7 @@
                 "symfony/symfony": "2.1.*",
                 "symfony/framework-bundle": "2.1.*"
             },
-            "time": "2013-01-08 17:11:31",
+            "time": "2013-01-20 19:21:53",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1339,17 +1339,17 @@
         },
         {
             "name": "snowcap/core-bundle",
-            "version": "dev-datalist",
+            "version": "dev-master",
             "target-dir": "Snowcap/CoreBundle",
             "source": {
                 "type": "git",
                 "url": "git://github.com/snowcap/SnowcapCoreBundle.git",
-                "reference": "b643fdfe0a47022f284b66494292e215628d98ea"
+                "reference": "9d8c4fef9ad550a73bd53a780b438b2555949d2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/snowcap/SnowcapCoreBundle/archive/b643fdfe0a47022f284b66494292e215628d98ea.zip",
-                "reference": "b643fdfe0a47022f284b66494292e215628d98ea",
+                "url": "https://github.com/snowcap/SnowcapCoreBundle/archive/9d8c4fef9ad550a73bd53a780b438b2555949d2c.zip",
+                "reference": "9d8c4fef9ad550a73bd53a780b438b2555949d2c",
                 "shasum": ""
             },
             "require": {
@@ -1363,7 +1363,7 @@
                 "fzaninotto/faker": "1.1.*@dev",
                 "doctrine/data-fixtures": "1.0.*@dev"
             },
-            "time": "2013-01-15 21:48:56",
+            "time": "2013-01-20 18:50:47",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1938,13 +1938,13 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "snowcap/core-bundle": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
-        "snowcap/im-bundle": 20,
-        "snowcap/elastica-bundle": 20,
-        "snowcap/admin-bundle": 20,
         "leafo/lessphp": 20,
         "fzaninotto/faker": 20,
-        "nelmio/alice": 20
+        "nelmio/alice": 20,
+        "snowcap/core-bundle": 20,
+        "snowcap/im-bundle": 20,
+        "snowcap/elastica-bundle": 20,
+        "snowcap/admin-bundle": 20
     }
 }

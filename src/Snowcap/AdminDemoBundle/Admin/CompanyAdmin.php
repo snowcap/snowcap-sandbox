@@ -16,28 +16,22 @@ class CompanyAdmin extends ContentAdmin {
         return $this->formFactory
             ->createBuilder('form', $data)
             ->add('name', 'text')
+            ->add('shortDescription', 'textarea')
             ->add('website', 'url')
             ->getForm();
     }
 
-    /**
-     * Return the main admin list for this content
-     *
-     * @return \Snowcap\AdminBundle\Datalist\AbstractDatalist
-     */
-    public function __getDatalist()
-    {
-        return $this->createDatalist('grid', 'company')
-            ->add('name', 'text')
-            ->add('website', 'text');
-    }
-
     public function getDatalist(){
         return $this->datalistFactory
-            ->createBuilder('datalist')
-            ->setView()
-            ->add('name', 'text')
-            ->add('website', 'text');
+            ->createBuilder('datalist', array(
+                'data_class' => 'Snowcap\AdminDemoBundle\Entity\Company',
+                'limit_per_page' => 10,
+                'search' => 'e.name'
+            ))
+            ->addField('name')
+            ->addField('shortDescription')
+            ->addField('website')
+            ->getDatalist();
     }
 
     /**

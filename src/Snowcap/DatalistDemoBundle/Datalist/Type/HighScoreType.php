@@ -39,7 +39,7 @@ class HighScoreType extends AbstractDatalistType
 
         $resolver->setDefaults(array(
             'limit_per_page' => 5,
-            'searchable' => true
+            'search' => '[player]'
         ));
     }
 
