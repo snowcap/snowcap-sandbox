@@ -37,7 +37,6 @@ class DefaultController extends Controller
         ));
         $datalist
             ->setDataSource($datasource)
-            ->setPage($this->getRequest()->get('page'))
             ->bind($this->getRequest());
 
         return array(
@@ -69,7 +68,6 @@ class DefaultController extends Controller
 
         $datalist
             ->setDatasource($datasource)
-            ->setPage($this->getRequest()->get('page', 1))
             ->bind($this->getRequest());
 
         return array(
