@@ -96,4 +96,12 @@ class Employee
     {
         return $this->company;
     }
+
+    /**
+     * @return string
+     */
+    public function getFullName()
+    {
+        return $this->firstName . ' ' . $this->lastName;
+    }
 }

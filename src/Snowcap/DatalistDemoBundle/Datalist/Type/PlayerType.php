@@ -45,7 +45,7 @@ class PlayerType extends AbstractDatalistType
             ))
             ->addAction('view', 'simple', array(
                 'route' => 'snowcap_datalistdemo_player',
-                'route_params' => array('player' => 'id')
+                'params' => array('player' => 'id')
             ));
     }
 

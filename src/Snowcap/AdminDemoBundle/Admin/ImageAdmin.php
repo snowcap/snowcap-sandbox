@@ -1,9 +1,7 @@
 <?php
 namespace Snowcap\AdminDemoBundle\Admin;
 
-use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Form\FormBuilder;
-use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\Route;
 
 use Snowcap\AdminDemoBundle\Form\ImageType;
@@ -16,11 +14,10 @@ class ImageAdmin extends ContentAdmin
      */
     public function getDatalist()
     {
-        $datalist = $this->createDatalist('thumbnail', 'image');
-        $datalist
-            ->add('name', 'label')
-            ->add('path', 'image');
-        return $datalist;
+        return $this->datalistFactory
+            ->createBuilder('datalist', array('data_class' => 'Snowcap\AdminDemoBundle\Entity\Image'))
+            ->addField('name')
+            ->getDatalist();
     }
 
     /**
@@ -46,5 +43,14 @@ class ImageAdmin extends ContentAdmin
     public function getName()
     {
         return 'image';
+    }
+
+    /**
+     * @param \Snowcap\AdminDemoBundle\Entity\Image $entity
+     * @return mixed
+     */
+    public function getEntityName($entity)
+    {
+        return $entity->getName();
     }
 }

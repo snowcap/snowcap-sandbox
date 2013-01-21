@@ -21,15 +21,17 @@ class EmployeeAdmin extends ContentAdmin {
     }
 
     /**
-     * Return the main admin list for this content
-     *
-     * @return \Snowcap\AdminBundle\Datalist\AbstractDatalist
+     * @return \Snowcap\AdminBundle\Datalist\DatalistInterface
      */
     public function getDatalist()
     {
-        return $this->createDatalist('grid', 'employee')
-            ->add('firstName', 'text')
-            ->add('lastName', 'text');
+        return $this->datalistFactory
+            ->createBuilder('datalist', array(
+                'data_class' => 'Snowcap\AdminDemoBundle\Entity\Employee'
+            ))
+            ->addField('firstName')
+            ->addField('lastName')
+            ->getDatalist();
     }
 
     /**
@@ -38,5 +40,14 @@ class EmployeeAdmin extends ContentAdmin {
     public function getEntityClass()
     {
         return 'Snowcap\AdminDemoBundle\Entity\Employee';
+    }
+
+    /**
+     * @param \Snowcap\AdminDemoBundle\Entity\Employee $entity
+     * @return string
+     */
+    public function getEntityName($entity)
+    {
+        return $entity->getFullName();
     }
 }

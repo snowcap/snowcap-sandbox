@@ -31,6 +31,10 @@ class CompanyAdmin extends ContentAdmin {
             ->addField('name')
             ->addField('shortDescription')
             ->addField('website')
+            ->addAction('view', 'content_admin', array(
+                'admin' => $this,
+                'action' => 'view'
+            ))
             ->getDatalist();
     }
 
@@ -40,5 +44,14 @@ class CompanyAdmin extends ContentAdmin {
     public function getEntityClass()
     {
         return 'Snowcap\AdminDemoBundle\Entity\Company';
+    }
+
+    /**
+     * @param \Snowcap\AdminDemoBundle\Entity\Company $entity
+     * @return string
+     */
+    public function getEntityName($entity)
+    {
+        return $entity->getName();
     }
 }
