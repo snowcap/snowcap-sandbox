@@ -2,6 +2,7 @@
 
 namespace Snowcap\DatalistDemoBundle\Controller;
 
+use Snowcap\AdminBundle\Datalist\DatalistFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -73,6 +74,48 @@ class DefaultController extends Controller
 
         return array(
             'datalist_title' => 'Regular datalist with array datasource',
+            'datalist' => $datalist
+        );
+    }
+
+    /**
+     * @Route("/games", name="snowcap_datalistdemo_games")
+     * @Template("SnowcapDatalistDemoBundle:Default:games.html.twig")
+     */
+    public function gamesAction()
+    {
+        $datalistFactory = $this->get('snowcap_admin.datalist_factory'); /** @var DatalistFactory $datalistFactory */
+        $datalist = $datalistFactory
+            ->createBuilder('datalist')
+            ->addField('name', 'text')
+            ->addField('type', 'label', array(
+                'mappings' => array(
+                    'rts' => array(
+                        'label' => 'Real-time strategy',
+                        'attr' => array('class' => 'label label-success')
+                    ),
+                    'fps' => array(
+                        'label' => 'First-person shooter',
+                        'attr' => array('class' => 'label label-warning')
+                    ),
+                    'rpg' => array(
+                        'label' => 'Role-playing game',
+                        'attr' => array('class' => 'label label-reverse')
+                    ),
+                )
+            ))
+            ->getDatalist();
+
+        $dataSource = new ArrayDatasource(array(
+            array('name' => 'Starcraft2', 'type' => 'rts'),
+            array('name' => 'Diablo 3', 'type' => 'rpg'),
+            array('name' => 'Command & Conquer', 'type' => 'rts'),
+            array('name' => 'Counter Strike', 'type' => 'fps'),
+            array('name' => 'Battlefield 5', 'type' => 'fps'),
+        ));
+        $datalist->setDatasource($dataSource);
+
+        return array(
             'datalist' => $datalist
         );
     }

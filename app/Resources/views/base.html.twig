@@ -4,9 +4,17 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>{% block title %}Snowcap Admin{% endblock %}</title>
+    {# stylesheets block #}
     {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/snowcapbootstrap/vendor/bootstrap/css/bootstrap.min.css') }}"/>
-    {% endblock %}
+        {% stylesheets
+        'bundles/snowcapbootstrap/vendor/bootstrap/less/bootstrap.less'
+        'bundles/snowcapbootstrap/vendor/bootstrap/less/responsive.less'
+        filter="lessphp,cssrewrite"
+        output='cache/assetic/css/snowcapsandbox.css'
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endblock stylesheets %}
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
@@ -22,7 +30,8 @@
 {% block javascripts %}
     <script src="{{ asset('bundles/snowcapcore/vendor/jquery/jquery.js') }}"></script>
     <script src="{{ asset('bundles/snowcapcore/js/all.js') }}"></script>
-    <script src="{{ asset('bundles/snowcapbootstrap/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/snowcapbootstrap/vendor/bootstrap/js/bootstrap-modal.js') }}"></script>
+    <script src="{{ asset('bundles/snowcapbootstrap/vendor/bootstrap/js/bootstrap-tooltip.js') }}"></script>
     <script src="{{ asset('bundles/snowcapbootstrap/js/all.js') }}"></script>
 {% endblock %}
 </body>

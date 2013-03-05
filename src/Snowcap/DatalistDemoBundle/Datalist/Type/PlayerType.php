@@ -72,6 +72,14 @@ class PlayerType extends AbstractDatalistType
     }
 
     /**
+     * @return string
+     */
+    public function getBlockName()
+    {
+        return 'datalist';
+    }
+
+    /**
      * @return array
      */
     private function getCountries() {

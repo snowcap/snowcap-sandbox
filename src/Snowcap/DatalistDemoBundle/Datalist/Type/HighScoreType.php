@@ -51,6 +51,17 @@ class HighScoreType extends AbstractDatalistType
         return 'snowcap_datalistdemo_highscore';
     }
 
+    /**
+     * @return string
+     */
+    public function getBlockName()
+    {
+        return 'datalist';
+    }
+
+    /**
+     * @return array
+     */
     private function getModes()
     {
         return array(
