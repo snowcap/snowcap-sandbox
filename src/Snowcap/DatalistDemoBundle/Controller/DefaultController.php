@@ -88,6 +88,8 @@ class DefaultController extends Controller
         $datalist = $datalistFactory
             ->createBuilder('datalist')
             ->addField('name', 'text')
+            ->addField('awesome', 'boolean')
+            ->addField('publishedOn', 'datetime', array('format' => 'd J s'))
             ->addField('type', 'label', array(
                 'mappings' => array(
                     'rts' => array(
@@ -107,11 +109,11 @@ class DefaultController extends Controller
             ->getDatalist();
 
         $dataSource = new ArrayDatasource(array(
-            array('name' => 'Starcraft2', 'type' => 'rts'),
-            array('name' => 'Diablo 3', 'type' => 'rpg'),
-            array('name' => 'Command & Conquer', 'type' => 'rts'),
-            array('name' => 'Counter Strike', 'type' => 'fps'),
-            array('name' => 'Battlefield 5', 'type' => 'fps'),
+            array('name' => 'Starcraft2', 'type' => 'rts', 'awesome' => true, 'publishedOn' => new \DateTime('2010-05-02')),
+            array('name' => 'Diablo 3', 'type' => 'rpg', 'awesome' => false, 'publishedOn' => new \DateTime('2012-10-04')),
+            array('name' => 'Command & Conquer', 'type' => 'rts', 'awesome' => false, 'publishedOn' => new \DateTime('1997-03-08')),
+            array('name' => 'Counter Strike', 'type' => 'fps', 'awesome' => true, 'publishedOn' => new \DateTime('2001-10-20')),
+            array('name' => 'Battlefield 5', 'type' => 'fps', 'awesome' => false, 'publishedOn' => new \DateTime('2013-08-02')),
         ));
         $datalist->setDatasource($dataSource);
 
