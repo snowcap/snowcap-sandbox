@@ -20,9 +20,8 @@ class HighScoreType extends AbstractDatalistType
         $builder
             ->addField('player', 'heading')
             ->addField('score')
-            ->addField('pmop')
             ->addField('mode', 'label', array(
-                'mappings' => $this->getModes()
+                'mappings' => $this->getModes(),
             ))
             ->addFilter('mode', 'choice', array(
                 'choices' => $this->getModes(),
@@ -65,8 +64,12 @@ class HighScoreType extends AbstractDatalistType
     private function getModes()
     {
         return array(
-            'arcade' => 'Arcade',
-            'time_attack' => 'Time attack'
+            'arcade' => array(
+                'label' => 'Arcade'
+            ),
+            'time_attack' => array(
+                'label' => 'Time attack'
+            )
         );
     }
 
