@@ -21,10 +21,10 @@
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "fzaninotto/faker": "1.1.*@dev",
         "nelmio/alice": "1.0.*@dev",
-        "snowcap/core-bundle": "dev-master",
-        "snowcap/im-bundle": "dev-master",
-        "snowcap/elastica-bundle": "dev-master",
-        "snowcap/admin-bundle": "dev-master"
+        "snowcap/core-bundle": "2.2.*@dev",
+        "snowcap/im-bundle": "2.2.*@dev",
+        "snowcap/elastica-bundle": "2.2.*@dev",
+        "snowcap/admin-bundle": "2.2.*@dev"
     },
     "scripts": {
         "post-install-cmd": [
