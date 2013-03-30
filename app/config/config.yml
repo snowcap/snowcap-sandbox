@@ -60,6 +60,7 @@ swiftmailer:
     spool:     { type: memory }
 
 parameters:
-    router.class: Snowcap\I18nBundle\Routing\I18nRouter
     router.options.matcher.cache_class: ~
-    locales: [en, fr]
+
+snowcap_i18n:
+    locales: [en, fr, es]
