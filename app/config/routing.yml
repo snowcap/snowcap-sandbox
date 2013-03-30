@@ -7,8 +7,13 @@ snowcap_datalist_demo:
 
 snowcap_i18n_demo:
     resource: "@SnowcapI18nDemoBundle/Controller/"
-    type: i18n
+    type: annotation_i18n
     prefix: i18n
+
+#snowcap_i18n_demo:
+#    resource: "@SnowcapI18nDemoBundle/Resources/config/routing.yml"
+#    type: yaml_i18n
+#    prefix: i18n
 
 snowcap_admin:
     resource: "@SnowcapAdminBundle/Resources/config/routing.yml"

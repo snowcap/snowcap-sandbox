@@ -1,0 +1,11 @@
+snowcap_i18ndemo_default_index:
+    pattern: ""
+    defaults: { _controller: SnowcapI18nDemoBundle:Default:index }
+
+snowcap_i18ndemo_default_about:
+    pattern: "about"
+    defaults: { _controller: SnowcapI18nDemoBundle:Default:about }
+
+snowcap_i18ndemo_default_team:
+    pattern: "team"
+    defaults: { _controller: SnowcapI18nDemoBundle:Default:team }
