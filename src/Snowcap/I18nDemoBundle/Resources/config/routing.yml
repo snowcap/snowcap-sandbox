@@ -1,6 +1,11 @@
 snowcap_i18ndemo_default_index:
     pattern: ""
     defaults: { _controller: SnowcapI18nDemoBundle:Default:index }
+    i18n: false
+
+snowcap_i18ndemo_default_home:
+    pattern: ""
+    defaults: { _controller: SnowcapI18nDemoBundle:Default:home }
 
 snowcap_i18ndemo_default_about:
     pattern: "about"

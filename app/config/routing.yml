@@ -10,7 +10,7 @@ snowcap_i18n_demo:
     type: annotation_i18n
     prefix: i18n
 
-#snowcap_i18n_demo:
+#snowcap_i18ndemo_default_index:
 #    resource: "@SnowcapI18nDemoBundle/Resources/config/routing.yml"
 #    type: yaml_i18n
 #    prefix: i18n

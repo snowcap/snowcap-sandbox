@@ -11,10 +11,19 @@ use Snowcap\I18nBundle\Annotation\I18nRoute;
 class DefaultController extends Controller
 {
     /**
-     * @I18nRoute("", name="snowcap_i18ndemo_default_index")
+     * @I18nRoute("", i18n=false, name="snowcap_i18ndemo_default_index")
      * @Template
      */
     public function indexAction()
+    {
+        return $this->redirect($this->generateUrl('snowcap_i18ndemo_default_home'));
+    }
+
+    /**
+     * @I18nRoute("", name="snowcap_i18ndemo_default_home")
+     * @Template
+     */
+    public function homeAction()
     {
         return array();
     }
