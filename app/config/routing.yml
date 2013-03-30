@@ -5,6 +5,11 @@ snowcap_datalist_demo:
     resource: "@SnowcapDatalistDemoBundle/Controller/"
     prefix: datalist
 
+snowcap_i18n_demo:
+    resource: "@SnowcapI18nDemoBundle/Controller/"
+    type: i18n
+    prefix: i18n
+
 snowcap_admin:
     resource: "@SnowcapAdminBundle/Resources/config/routing.yml"
     prefix: admin

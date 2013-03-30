@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h1>About page</h1>
+    <p>This bundle is used to demonstrate SnowcapI18nBundle capabilities</p>
+    <ul>
+        <li>
+            <a href="{{ path('snowcap_i18ndemo_default_team') }}">Go to team page (default)</a>
+        </li>
+        <li>
+            <a href="{{ path('snowcap_i18ndemo_default_team', {'_locale': 'fr'}) }}">Go to team page (fr)</a>
+        </li>
+    </ul>
+{% endblock body %}

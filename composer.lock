@@ -1,5 +1,5 @@
 {
-    "hash": "8e08f468788b807de7b4c2224fea3ca3",
+    "hash": "1002bb8355a33c36c8e1e3b3fbec5dd5",
     "packages": [
         {
             "name": "dflydev/markdown",
@@ -1978,6 +1978,68 @@
             "time": "2013-03-05 12:21:09"
         },
         {
+            "name": "snowcap/i18n-bundle",
+            "version": "dev-master",
+            "target-dir": "Snowcap/I18nBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/snowcap/SnowcapI18nBundle.git",
+                "reference": "5863c559e6fbe882f8adf4f7e5d6f1b2a2903b2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/snowcap/SnowcapI18nBundle/zipball/5863c559e6fbe882f8adf4f7e5d6f1b2a2903b2a",
+                "reference": "5863c559e6fbe882f8adf4f7e5d6f1b2a2903b2a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/framework-bundle": "2.2.*",
+                "symfony/symfony": "2.2.*"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Snowcap\\I18nBundle": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pierre Vanliefland",
+                    "email": "pierre@snowcap.be"
+                },
+                {
+                    "name": "Edwin Hermans",
+                    "email": "edwin@snowcap.be"
+                },
+                {
+                    "name": "Jérôme Poskin",
+                    "email": "jerome@snowcap.be"
+                },
+                {
+                    "name": "Snowcap",
+                    "homepage": "http://www.snowcap.be"
+                }
+            ],
+            "description": "Symfony SnowcapI18nBundle",
+            "homepage": "https://github.com/snowcap/SnowcapI18nBundle",
+            "keywords": [
+                "i18n",
+                "localization",
+                "text"
+            ],
+            "time": "2013-03-29 14:13:22"
+        },
+        {
             "name": "snowcap/im-bundle",
             "version": "dev-master",
             "target-dir": "Snowcap/ImBundle",
@@ -2481,7 +2543,8 @@
         "snowcap/core-bundle": 20,
         "snowcap/im-bundle": 20,
         "snowcap/elastica-bundle": 20,
-        "snowcap/admin-bundle": 20
+        "snowcap/admin-bundle": 20,
+        "snowcap/i18n-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"

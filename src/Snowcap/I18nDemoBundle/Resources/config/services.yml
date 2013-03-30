@@ -1,0 +1,7 @@
+parameters:
+#    snowcap_i18n_demo.example.class: Snowcap\I18nDemoBundle\Example
+
+services:
+#    snowcap_i18n_demo.example:
+#        class: %snowcap_i18n_demo.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
