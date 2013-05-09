@@ -12,7 +12,6 @@ class DefaultController extends Controller
 {
     /**
      * @I18nRoute("", i18n=false, name="snowcap_i18ndemo_default_index")
-     * @Template
      */
     public function indexAction()
     {
