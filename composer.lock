@@ -1,4 +1,8 @@
 {
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
     "hash": "1002bb8355a33c36c8e1e3b3fbec5dd5",
     "packages": [
         {
@@ -62,16 +66,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.1",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "v1.1"
+                "reference": "v1.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/v1.1",
-                "reference": "v1.1",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/v1.1.1",
+                "reference": "v1.1.1",
                 "shasum": ""
             },
             "require": {
@@ -82,6 +86,11 @@
                 "doctrine/cache": "1.*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Doctrine\\Common\\Annotations\\": "lib/"
@@ -113,7 +122,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -124,7 +133,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2013-03-17 14:03:10"
+            "time": "2013-04-20 08:30:17"
         },
         {
             "name": "doctrine/cache",
@@ -132,12 +141,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "b5716ea776f349a0fedcf0e7d032386c1f696f76"
+                "reference": "4116eff37635219101a22c9732f409633eb07c5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/b5716ea776f349a0fedcf0e7d032386c1f696f76",
-                "reference": "b5716ea776f349a0fedcf0e7d032386c1f696f76",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/4116eff37635219101a22c9732f409633eb07c5d",
+                "reference": "4116eff37635219101a22c9732f409633eb07c5d",
                 "shasum": ""
             },
             "require": {
@@ -180,7 +189,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -190,7 +199,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2013-03-17 13:59:02"
+            "time": "2013-05-04 23:23:40"
         },
         {
             "name": "doctrine/collections",
@@ -265,12 +274,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "33f906e257510247d0bcd60b8b54f47cfb51e3ed"
+                "reference": "7eea788cb5869d9954b0d8091969f54b875d1003"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/33f906e257510247d0bcd60b8b54f47cfb51e3ed",
-                "reference": "33f906e257510247d0bcd60b8b54f47cfb51e3ed",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/7eea788cb5869d9954b0d8091969f54b875d1003",
+                "reference": "7eea788cb5869d9954b0d8091969f54b875d1003",
                 "shasum": ""
             },
             "require": {
@@ -318,7 +327,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -331,7 +340,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2013-03-24 17:52:59"
+            "time": "2013-05-09 08:02:38"
         },
         {
             "name": "doctrine/data-fixtures",
@@ -339,12 +348,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/data-fixtures.git",
-                "reference": "eef10f6b92706bdae2841a8fdeb45ad8999b15b3"
+                "reference": "6924952026b77ff492da559b04ad166d25c611cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/eef10f6b92706bdae2841a8fdeb45ad8999b15b3",
-                "reference": "eef10f6b92706bdae2841a8fdeb45ad8999b15b3",
+                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/6924952026b77ff492da559b04ad166d25c611cb",
+                "reference": "6924952026b77ff492da559b04ad166d25c611cb",
                 "shasum": ""
             },
             "require": {
@@ -376,7 +385,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/"
                 }
@@ -386,7 +395,7 @@
             "keywords": [
                 "database"
             ],
-            "time": "2013-03-11 00:25:48"
+            "time": "2013-04-11 23:14:04"
         },
         {
             "name": "doctrine/dbal",
@@ -585,12 +594,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "7314da6f9141705f0528c8b72546cb8aeea54ae8"
+                "reference": "8b4b3ccec7aafc596e2fc1e593c9f2e78f939c8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/7314da6f9141705f0528c8b72546cb8aeea54ae8",
-                "reference": "7314da6f9141705f0528c8b72546cb8aeea54ae8",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/8b4b3ccec7aafc596e2fc1e593c9f2e78f939c8c",
+                "reference": "8b4b3ccec7aafc596e2fc1e593c9f2e78f939c8c",
                 "shasum": ""
             },
             "require": {
@@ -633,7 +642,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -645,7 +654,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2013-03-09 20:00:29"
+            "time": "2013-04-10 16:14:30"
         },
         {
             "name": "doctrine/lexer",
@@ -1747,12 +1756,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/snowcap/SnowcapAdminBundle.git",
-                "reference": "209846b722c28ce44a5349ff6d50edecb3265193"
+                "reference": "42e5be9697e5bdd44b5bb2be9fa8a610b328beeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snowcap/SnowcapAdminBundle/zipball/209846b722c28ce44a5349ff6d50edecb3265193",
-                "reference": "209846b722c28ce44a5349ff6d50edecb3265193",
+                "url": "https://api.github.com/repos/snowcap/SnowcapAdminBundle/zipball/42e5be9697e5bdd44b5bb2be9fa8a610b328beeb",
+                "reference": "42e5be9697e5bdd44b5bb2be9fa8a610b328beeb",
                 "shasum": ""
             },
             "require": {
@@ -1800,7 +1809,7 @@
             "keywords": [
                 "admin"
             ],
-            "time": "2013-03-26 15:16:37"
+            "time": "2013-05-03 12:02:11"
         },
         {
             "name": "snowcap/bootstrap-bundle",
@@ -1809,12 +1818,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/snowcap/SnowcapBootstrapBundle.git",
-                "reference": "14969f0fe8c9d2faabf2cc3ce512398e9a4991c4"
+                "reference": "0786467bf9f851cdc92d082013b4bafc3aa2ff67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snowcap/SnowcapBootstrapBundle/zipball/14969f0fe8c9d2faabf2cc3ce512398e9a4991c4",
-                "reference": "14969f0fe8c9d2faabf2cc3ce512398e9a4991c4",
+                "url": "https://api.github.com/repos/snowcap/SnowcapBootstrapBundle/zipball/0786467bf9f851cdc92d082013b4bafc3aa2ff67",
+                "reference": "0786467bf9f851cdc92d082013b4bafc3aa2ff67",
                 "shasum": ""
             },
             "require": {
@@ -1860,7 +1869,7 @@
             "keywords": [
                 "twitter bootstrap"
             ],
-            "time": "2013-03-19 10:54:53"
+            "time": "2013-05-07 19:37:48"
         },
         {
             "name": "snowcap/core-bundle",
@@ -1869,12 +1878,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/snowcap/SnowcapCoreBundle.git",
-                "reference": "dd8cb08bd531c25d8ff0b74685e49abe194da947"
+                "reference": "27b27e52d47eee34f83f2703daee7e7cfaad264d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snowcap/SnowcapCoreBundle/zipball/dd8cb08bd531c25d8ff0b74685e49abe194da947",
-                "reference": "dd8cb08bd531c25d8ff0b74685e49abe194da947",
+                "url": "https://api.github.com/repos/snowcap/SnowcapCoreBundle/zipball/27b27e52d47eee34f83f2703daee7e7cfaad264d",
+                "reference": "27b27e52d47eee34f83f2703daee7e7cfaad264d",
                 "shasum": ""
             },
             "require": {
@@ -1923,7 +1932,7 @@
             "keywords": [
                 "utility"
             ],
-            "time": "2013-03-11 15:37:02"
+            "time": "2013-05-02 07:38:30"
         },
         {
             "name": "snowcap/elastica-bundle",
@@ -1984,12 +1993,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/snowcap/SnowcapI18nBundle.git",
-                "reference": "5863c559e6fbe882f8adf4f7e5d6f1b2a2903b2a"
+                "reference": "31b8e449a4a2e00aff214e33d2de8d3a697251c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snowcap/SnowcapI18nBundle/zipball/5863c559e6fbe882f8adf4f7e5d6f1b2a2903b2a",
-                "reference": "5863c559e6fbe882f8adf4f7e5d6f1b2a2903b2a",
+                "url": "https://api.github.com/repos/snowcap/SnowcapI18nBundle/zipball/31b8e449a4a2e00aff214e33d2de8d3a697251c1",
+                "reference": "31b8e449a4a2e00aff214e33d2de8d3a697251c1",
                 "shasum": ""
             },
             "require": {
@@ -2037,7 +2046,7 @@
                 "localization",
                 "text"
             ],
-            "time": "2013-03-29 14:13:22"
+            "time": "2013-04-24 12:54:41"
         },
         {
             "name": "snowcap/im-bundle",
