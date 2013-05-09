@@ -13,8 +13,8 @@ class EmployeeAdmin extends ContentAdmin {
      */
     public function getForm($data = null)
     {
-        return $this->formFactory
-            ->createBuilder('form', $data)
+        return $this->getFormFactory()
+            ->createBuilder('form', $data, array('data_class' => $this->getEntityClass()))
             ->add('firstName', 'text')
             ->add('lastName', 'text')
             ->getForm();
@@ -25,12 +25,21 @@ class EmployeeAdmin extends ContentAdmin {
      */
     public function getDatalist()
     {
-        return $this->datalistFactory
+        return $this->getDatalistFactory()
             ->createBuilder('datalist', array(
                 'data_class' => 'Snowcap\AdminDemoBundle\Entity\Employee'
             ))
             ->addField('firstName')
             ->addField('lastName')
+            ->addAction('update', 'content_admin', array(
+                'admin' => $this,
+                'action' => 'update'
+            ))
+            ->addAction('delete', 'content_admin', array(
+                'admin' => $this,
+                'action' => 'delete',
+                'modal' => true
+            ))
             ->getDatalist();
     }
 

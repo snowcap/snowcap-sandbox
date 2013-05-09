@@ -13,8 +13,8 @@ class CompanyAdmin extends ContentAdmin {
      */
     public function getForm($data = null)
     {
-        return $this->formFactory
-            ->createBuilder('form', $data)
+        return $this->getFormFactory()
+            ->createBuilder('form', $data, array('data_class' => $this->getEntityClass()))
             ->add('name', 'text')
             ->add('shortDescription', 'textarea')
             ->add('website', 'url')
@@ -22,7 +22,7 @@ class CompanyAdmin extends ContentAdmin {
     }
 
     public function getDatalist(){
-        return $this->datalistFactory
+        return $this->getDatalistFactory()
             ->createBuilder('datalist', array(
                 'data_class' => 'Snowcap\AdminDemoBundle\Entity\Company',
                 'limit_per_page' => 10,
@@ -31,9 +31,14 @@ class CompanyAdmin extends ContentAdmin {
             ->addField('name')
             ->addField('shortDescription')
             ->addField('website')
-            ->addAction('view', 'content_admin', array(
+            ->addAction('update', 'content_admin', array(
                 'admin' => $this,
-                'action' => 'view'
+                'action' => 'update'
+            ))
+            ->addAction('delete', 'content_admin', array(
+                'admin' => $this,
+                'action' => 'delete',
+                'modal' => true
             ))
             ->getDatalist();
     }

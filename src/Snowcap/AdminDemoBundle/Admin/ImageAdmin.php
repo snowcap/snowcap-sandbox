@@ -10,13 +10,22 @@ use Snowcap\AdminBundle\Admin\ContentAdmin;
 class ImageAdmin extends ContentAdmin
 {
     /**
-     * @return \Snowcap\AdminBundle\Datalist\AbstractDatalist
+     * @return \Snowcap\AdminBundle\Datalist\DatalistInterface
      */
     public function getDatalist()
     {
-        return $this->datalistFactory
-            ->createBuilder('datalist', array('data_class' => 'Snowcap\AdminDemoBundle\Entity\Image'))
+        return $this->getDatalistFactory()
+            ->createBuilder('datalist', array('data_class' => $this->getEntityClass()))
             ->addField('name')
+            ->addAction('update', 'content_admin', array(
+                'admin' => $this,
+                'action' => 'update'
+            ))
+            ->addAction('delete', 'content_admin', array(
+                'admin' => $this,
+                'action' => 'delete',
+                'modal' => true
+            ))
             ->getDatalist();
     }
 
@@ -26,7 +35,7 @@ class ImageAdmin extends ContentAdmin
      */
     public function getForm($data = null)
     {
-        return $this->formFactory->create(new ImageType(), $data);
+        return $this->getFormFactory()->create(new ImageType(), $data);
     }
 
     /**
