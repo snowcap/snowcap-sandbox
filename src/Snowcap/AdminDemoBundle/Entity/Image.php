@@ -29,7 +29,7 @@ class Image
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
-     * @Assert\NotBlank
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -37,6 +37,7 @@ class Image
      * @var string $path
      *
      * @ORM\Column(name="path", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $path;
 
