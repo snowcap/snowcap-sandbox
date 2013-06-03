@@ -17,6 +17,7 @@ class EmployeeAdmin extends ContentAdmin {
             ->createBuilder('form', $data, array('data_class' => $this->getEntityClass()))
             ->add('firstName', 'text')
             ->add('lastName', 'text')
+            ->add('company', 'entity', array('class' => 'SnowcapAdminDemoBundle:Company', 'property' => 'name'))
             ->getForm();
     }
 
