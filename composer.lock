@@ -857,16 +857,16 @@
         },
         {
             "name": "kriswallsmith/assetic",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "v1.1.0"
+                "reference": "v1.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/v1.1.0",
-                "reference": "v1.1.0",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/v1.1.1",
+                "reference": "v1.1.1",
                 "shasum": ""
             },
             "require": {
@@ -924,7 +924,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-05-16 05:28:39"
+            "time": "2013-06-01 22:13:43"
         },
         {
             "name": "leafo/lessphp",
@@ -1159,17 +1159,17 @@
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v2.3.0-RC1",
+            "version": "v2.3.0",
             "target-dir": "Sensio/Bundle/DistributionBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sensio/SensioDistributionBundle.git",
-                "reference": "v2.3.0-RC1"
+                "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
+                "reference": "v2.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensio/SensioDistributionBundle/zipball/v2.3.0-RC1",
-                "reference": "v2.3.0-RC1",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/v2.3.0",
+                "reference": "v2.3.0",
                 "shasum": ""
             },
             "require": {
@@ -1201,21 +1201,21 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2013-05-01 16:04:52"
+            "time": "2013-05-30 16:15:25"
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v2.3.0-RC1",
+            "version": "v2.3.0",
             "target-dir": "Sensio/Bundle/FrameworkExtraBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sensio/SensioFrameworkExtraBundle.git",
-                "reference": "v2.3.0-RC1"
+                "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
+                "reference": "v2.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensio/SensioFrameworkExtraBundle/zipball/v2.3.0-RC1",
-                "reference": "v2.3.0-RC1",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/v2.3.0",
+                "reference": "v2.3.0",
                 "shasum": ""
             },
             "require": {
@@ -1248,21 +1248,21 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2013-05-16 20:55:41"
+            "time": "2013-06-02 16:13:20"
         },
         {
             "name": "sensio/generator-bundle",
-            "version": "v2.3.0-RC1",
+            "version": "v2.3.0",
             "target-dir": "Sensio/Bundle/GeneratorBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sensio/SensioGeneratorBundle.git",
-                "reference": "v2.3.0-RC1"
+                "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
+                "reference": "v2.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensio/SensioGeneratorBundle/zipball/v2.3.0-RC1",
-                "reference": "v2.3.0-RC1",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/v2.3.0",
+                "reference": "v2.3.0",
                 "shasum": ""
             },
             "require": {
@@ -1296,7 +1296,7 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2013-05-10 19:01:16"
+            "time": "2013-06-02 16:13:06"
         },
         {
             "name": "snowcap/admin-bundle",
@@ -1305,12 +1305,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/snowcap/SnowcapAdminBundle.git",
-                "reference": "3e5bb88155475be95729a0179a9795d314195220"
+                "reference": "e1b2d85fd0667c700a4b1623603dd4aa4244d29e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snowcap/SnowcapAdminBundle/zipball/3e5bb88155475be95729a0179a9795d314195220",
-                "reference": "3e5bb88155475be95729a0179a9795d314195220",
+                "url": "https://api.github.com/repos/snowcap/SnowcapAdminBundle/zipball/e1b2d85fd0667c700a4b1623603dd4aa4244d29e",
+                "reference": "e1b2d85fd0667c700a4b1623603dd4aa4244d29e",
                 "shasum": ""
             },
             "require": {
@@ -1357,7 +1357,7 @@
             "keywords": [
                 "admin"
             ],
-            "time": "2013-05-31 17:45:04"
+            "time": "2013-06-03 13:22:11"
         },
         {
             "name": "snowcap/bootstrap-bundle",
@@ -1366,12 +1366,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/snowcap/SnowcapBootstrapBundle.git",
-                "reference": "909d82313237bf3326a87ff1720bd8d93e617450"
+                "reference": "04d44164883329b5ab38d7af70a55a4d3ec457b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snowcap/SnowcapBootstrapBundle/zipball/909d82313237bf3326a87ff1720bd8d93e617450",
-                "reference": "909d82313237bf3326a87ff1720bd8d93e617450",
+                "url": "https://api.github.com/repos/snowcap/SnowcapBootstrapBundle/zipball/04d44164883329b5ab38d7af70a55a4d3ec457b0",
+                "reference": "04d44164883329b5ab38d7af70a55a4d3ec457b0",
                 "shasum": ""
             },
             "require": {
@@ -1417,7 +1417,7 @@
             "keywords": [
                 "twitter bootstrap"
             ],
-            "time": "2013-05-31 17:43:27"
+            "time": "2013-06-02 12:18:26"
         },
         {
             "name": "snowcap/core-bundle",
@@ -1426,12 +1426,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/snowcap/SnowcapCoreBundle.git",
-                "reference": "acc539f02bb4c25899473cbd77433071e97e3368"
+                "reference": "2ab1bc2ca28fc06ba831cc098bfbb71a156f837b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/snowcap/SnowcapCoreBundle/zipball/acc539f02bb4c25899473cbd77433071e97e3368",
-                "reference": "acc539f02bb4c25899473cbd77433071e97e3368",
+                "url": "https://api.github.com/repos/snowcap/SnowcapCoreBundle/zipball/2ab1bc2ca28fc06ba831cc098bfbb71a156f837b",
+                "reference": "2ab1bc2ca28fc06ba831cc098bfbb71a156f837b",
                 "shasum": ""
             },
             "require": {
@@ -1483,7 +1483,7 @@
             "keywords": [
                 "utility"
             ],
-            "time": "2013-05-31 17:43:01"
+            "time": "2013-06-02 19:26:20"
         },
         {
             "name": "snowcap/elastica-bundle",
@@ -1782,7 +1782,7 @@
         },
         {
             "name": "symfony/icu",
-            "version": "v1.2.0-RC1",
+            "version": "v1.2.0",
             "target-dir": "Symfony/Component/Icu",
             "source": {
                 "type": "git",
@@ -1830,17 +1830,17 @@
         },
         {
             "name": "symfony/monolog-bundle",
-            "version": "v2.3.0-RC1",
+            "version": "v2.3.0",
             "target-dir": "Symfony/Bundle/MonologBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/MonologBundle.git",
-                "reference": "v2.3.0-RC1"
+                "reference": "v2.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/v2.3.0-RC1",
-                "reference": "v2.3.0-RC1",
+                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/v2.3.0",
+                "reference": "v2.3.0",
                 "shasum": ""
             },
             "require": {
@@ -1884,11 +1884,11 @@
                 "log",
                 "logging"
             ],
-            "time": "2013-04-24 12:34:02"
+            "time": "2013-05-27 18:06:55"
         },
         {
             "name": "symfony/swiftmailer-bundle",
-            "version": "v2.3.0-RC1",
+            "version": "v2.3.0",
             "target-dir": "Symfony/Bundle/SwiftmailerBundle",
             "source": {
                 "type": "git",
@@ -1943,16 +1943,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.3.0-RC1",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "v2.3.0-RC1"
+                "reference": "v2.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/v2.3.0-RC1",
-                "reference": "v2.3.0-RC1",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/v2.3.0",
+                "reference": "v2.3.0",
                 "shasum": ""
             },
             "require": {
@@ -2047,7 +2047,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2013-05-16 20:52:46"
+            "time": "2013-06-03 14:13:35"
         },
         {
             "name": "twig/extensions",
