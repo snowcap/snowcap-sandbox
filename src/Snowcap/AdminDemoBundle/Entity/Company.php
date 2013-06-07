@@ -3,6 +3,7 @@
 namespace Snowcap\AdminDemoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Table(name="company")
@@ -23,6 +24,7 @@ class Company
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -30,6 +32,7 @@ class Company
      * @var string
      *
      * @ORM\Column(name="short_description", length=255)
+     * @Assert\NotBlank()
      */
     private $shortDescription;
 
@@ -37,6 +40,7 @@ class Company
      * @var string
      *
      * @ORM\Column(name="website", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $website;
 
